@@ -1,0 +1,116 @@
+/*
+Theme Name: NAPSA 
+Theme URI: http://www.elegantthemes.com/gallery/divi/
+Description: Child theme for the Divi theme
+Author: Elegant Themes
+Author URI: http://www.elegantthemes.com
+Template: Divi
+Version: 1.0.0
+*/
+.container {
+  max-width: 1200px;
+}
+
+body {
+  font-family: "myriad-pro", sans-serif;
+  font-size: 16px;
+}
+
+#head_contain {
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+  padding: 1.0em 0 .05em;
+}
+#head_contain::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+@media only screen and (max-width: 900px) {
+  #head_contain {
+    text-align: center;
+  }
+}
+
+header {
+  border-bottom: 5px solid #e76735;
+}
+
+#top-header {
+  border-top: 5px solid #e76735;
+  background-color: #ffffff;
+}
+#top-header .container {
+  padding-top: 0;
+}
+
+#et-secondary-menu {
+  border-top: 1px solid #ffffff;
+}
+#et-secondary-menu ul.et-social-icons {
+  background-color: #dfdcda;
+  padding: 0.5em 0 0.45em;
+  margin-right: 0;
+  float: left;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+#et-secondary-menu ul.et-social-icons li {
+  width: auto;
+  margin: 0;
+}
+#et-secondary-menu ul.et-social-icons li a.icon {
+  padding: 0.5em 0.5em;
+  color: #999999;
+}
+#et-secondary-menu #et-secondary-nav {
+  background-color: #818c3c;
+  padding: 0;
+  margin-right: 0;
+  float: left;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+#et-secondary-menu #et-secondary-nav li {
+  font-size: 16px;
+  width: auto;
+  margin: 0;
+}
+#et-secondary-menu #et-secondary-nav li:after {
+  content: '';
+  width: 1px;
+  background-color: #ffffff;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+}
+#et-secondary-menu #et-secondary-nav li a {
+  padding: 0.87em 0.5em;
+}
+
+#et-top-navigation {
+  font-weight: 400;
+}
+
+#top-menu li {
+  font-size: 22px;
+  color: #5f5046;
+  margin-right: 2.0em;
+}
+#top-menu li:last-child {
+  margin-right: 1.0em;
+}
+#top-menu li a:hover {
+  text-decoration: underline;
+}
+#top-menu li a:after {
+  content: '>';
+  width: 1.0em;
+  position: absolute;
+  margin-left: 0.25em;
+}
