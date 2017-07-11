@@ -20,5 +20,19 @@ function my_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
+/*  Add Custom JS
+/* ------------------------------------ */ 
+function wpb_adding_scripts() {
+
+  $vars = "value";
+
+  wp_register_script('app', get_stylesheet_directory_uri() . '/js/napsa_custom.js');
+
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+  wp_enqueue_script('app');
+
+  }
+  add_action( 'wp_footer', 'wpb_adding_scripts' );
 
 ?>

@@ -91,4 +91,24 @@ header{
 	}
 }
 
+@media only screen and (min-width: 981px){
+	.et_header_style_left #et-top-navigation, .et_header_style_split #et-top-navigation {
+	    padding: 52px 0 0 0!important;
+	}
+}
 
+.nav_one_third{
+	width:33%;
+	display:inline-block;
+	float:left;
+}
+
+.nav_two_thirds{
+	width:66%;
+	display:inline-block;
+	float:left;
+}
+.et_header_style_left .logo_container {
+	position: relative;
+	padding-top:1.5em;
+}
