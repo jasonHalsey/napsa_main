@@ -11,6 +11,9 @@
 header{
   border-bottom:5px solid $orange;
 }
+#main-header{
+	z-index:99998;
+}
 #top-header{
 	border-top:5px solid $orange;
 	background-color: $white;

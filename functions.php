@@ -35,4 +35,54 @@ function wpb_adding_scripts() {
   }
   add_action( 'wp_footer', 'wpb_adding_scripts' );
 
+
+
+/*  Add Custom Footers
+/* ------------------------------------ */ 
+function my_custom_sidebar() {
+    register_sidebar(
+        array (
+            'name' => __( 'SideBar', 'your-theme-domain' ),
+            'id' => 'custom-side-bar',
+            'description' => __( 'Custom Sidebar', 'your-theme-domain' ),
+            'before_widget' => '<div class="widget-content">',
+            'after_widget' => "</div>",
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
+}
+add_action( 'widgets_init', 'my_custom_sidebar' );
+
+function aboutfooter_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'About Section Footer',
+    'id'            => 'about_footer',
+    'before_widget' => '<div class="aboutfooter-content">',
+    'after_widget' => "</div>",
+    'before_title' => '<h3 class="aboutfooter-title">',
+    'after_title' => '</h3>',
+  ) );
+
+}
+add_action( 'widgets_init', 'aboutfooter_widgets_init' );
+
+function infofooter_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'Info Section Footer',
+    'id'            => 'info_footer',
+    'before_widget' => '<div class="infofooter-content">',
+    'after_widget' => "</div>",
+    'before_title' => '<h3 class="infotfooter-title">',
+    'after_title' => '</h3>',
+  ) );
+
+}
+add_action( 'widgets_init', 'infofooter_widgets_init' );
+
+
+
+
 ?>

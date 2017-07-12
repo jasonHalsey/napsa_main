@@ -1,0 +1,48 @@
+body.home{
+	.hero_image{
+		.et_pb_slide{
+			min-height: 69vh;
+			padding:0 0;
+		}
+		.et_pb_slide_content {
+		    color: #fff;
+		    font-size: 18px;
+		    font-weight: 400;
+		    padding:0.5em 0.5em;
+		    background-color: green;
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		}
+	}
+	
+	.et_pb_slide_description{
+		padding: 16% 0% 8% 0%;
+		h2.et_pb_slide_title{
+			font-size: 60px;
+			span{
+				font-weight: 700;
+			}
+		}
+	}
+	.et_pb_slides .et_pb_slider_container_inner{
+		display: table-cell;
+		vertical-align:bottom;
+	}
+	.et_pb_bg_layout_dark h1{
+		font-size: 60px;
+		font-family: $headerFont;
+	}
+	.et_pb_slider .et_pb_container {
+	    position: relative;
+	    z-index: 2;
+	    width: 100%;
+	    max-width: 100%;
+	    margin: 0 auto;
+	}
+	
+	.primate_slider .et_pb_slide{ 
+        max-height: 300px; 
+    }
+}
