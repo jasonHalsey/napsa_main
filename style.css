@@ -262,6 +262,32 @@ body {
   font-size: 16px;
 }
 
+h2 {
+  font-family: "proxima-nova", sans-serif;
+  color: #e76735;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+p {
+  color: #000000;
+}
+
+.monkey_icon {
+  padding: 27px 0;
+}
+.monkey_icon:before {
+  content: url(images/monkey_icon.png);
+  position: absolute;
+  display: block;
+  z-index: 99999;
+  top: 0;
+  left: 50%;
+  width: 101px;
+  height: 101px;
+  margin: -50px 0 0 -50px;
+}
+
 #head_contain {
   max-width: 1200px;
   display: block;
@@ -347,18 +373,18 @@ header {
   font-weight: 400;
 }
 
-#top-menu li {
+#top-menu > li {
   font-size: 22px;
   color: #5f5046;
   margin-right: 2.0em;
 }
-#top-menu li:last-child {
+#top-menu > li:last-child {
   margin-right: 1.0em;
 }
-#top-menu li a:hover {
+#top-menu > li > a:hover {
   text-decoration: underline;
 }
-#top-menu li a:after {
+#top-menu > li > a:after {
   content: '>';
   width: 1.0em;
   position: absolute;
@@ -387,12 +413,53 @@ header {
   padding-top: 1.5em;
 }
 
+#top-menu .menu-item-has-children > a:first-child:after, #et-secondary-nav .menu-item-has-children > a:first-child:after {
+  content: '>';
+  width: 1.0em;
+  position: absolute;
+  margin-left: 1.25em;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 22px;
+  right: -0.35em;
+  top: 0.08em;
+  font-weight: 400;
+}
+
+.nav li ul {
+  margin-top: -46px;
+  z-index: 99999;
+  background: #6f7a36;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #6f7a36 47%, #adbb5a 83%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #6f7a36 47%, #adbb5a 83%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #6f7a36 47%, #adbb5a 83%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f7a36', endColorstr='#adbb5a',GradientType=0 );
+  /* IE6-9 */
+  border-top: 0px solid #6F7A36;
+}
+.nav li ul li a {
+  color: #ffffff !important;
+  font-size: 18px;
+}
+.nav li ul li aafter {
+  content: ' ';
+}
+
+#top-menu li li {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 18px;
+}
+
 body.home .hero_image .et_pb_slide {
   min-height: 69vh;
   padding: 0 0;
 }
 body.home .hero_image .et_pb_slide_content {
-  color: #fff;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 400;
   padding: 0.5em 0.5em;
@@ -401,6 +468,10 @@ body.home .hero_image .et_pb_slide_content {
   left: 0;
   right: 0;
   bottom: 0;
+}
+body.home .hero_image .et_pb_slide_content p {
+  margin: 0 0 0.4em 0;
+  color: #ffffff;
 }
 body.home .et_pb_slide_description {
   padding: 16% 0% 8% 0%;
@@ -428,6 +499,72 @@ body.home .et_pb_slider .et_pb_container {
 }
 body.home .primate_slider .et_pb_slide {
   max-height: 300px;
+}
+body.home .primate_slide_container {
+  padding: 54px 0 0;
+}
+body.home .mission_block {
+  padding: 0;
+}
+body.home .mission_statement {
+  padding: 0 9%;
+}
+body.home .mission_statement p {
+  color: #666666;
+  font-size: 30px;
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+body.home .mission_statement h2 {
+  margin: 0;
+}
+body.home .cta_block {
+  padding: 0 0 54px;
+}
+body.home .cta_block h2 {
+  margin: 0;
+  line-height: 1.1;
+  padding-bottom: 0;
+  font-weight: 700;
+}
+body.home .cta_block p {
+  color: #000000;
+  padding-bottom: 0;
+}
+body.home .cta_block a {
+  color: #0404ee;
+  font-weight: 700;
+}
+body.home .et_pb_posts h2 {
+  font-size: 16px;
+  margin-top: 0;
+}
+body.home .et_pb_posts h2 span {
+  color: #000000;
+  font-weight: 700;
+}
+body.home .et_pb_posts h2 a {
+  color: #0404ee;
+  margin-left: 0.5em;
+  font-weight: 500;
+}
+body.home .et_pb_posts .post-content {
+  display: none;
+}
+body.home .et_pb_number_counter span.percent-value {
+  color: #5f5046;
+}
+body.home .counter_header {
+  padding: 27px 0 0;
+}
+body.home .counter_header h2 {
+  margin: 0 0 0 0;
+}
+body.home .counter_container {
+  padding: 10px 0 0;
+}
+body.home .counter_text {
+  margin-bottom: 3.5em;
 }
 
 footer {
@@ -476,6 +613,7 @@ footer .footer_contain .footer_logo {
 }
 footer .footer_contain .footer_logo p {
   margin: 0 0 .35em 0;
+  color: #ffffff;
 }
 footer .footer_contain .footer_logo a {
   color: #fff;
@@ -498,6 +636,10 @@ footer .footer_contain .footer_about {
   width: calc(50% - 30px);
   float: left;
   margin-left: 20px;
+  color: #ffffff;
+}
+footer .footer_contain .footer_about p {
+  color: #ffffff;
 }
 @media only screen and (max-width: 700px) {
   footer .footer_contain .footer_about {
@@ -514,7 +656,7 @@ footer .footer_contain .footer_facebook {
   width: calc(25% - 25px);
   float: left;
   margin-left: 20px;
-  color: #000;
+  color: #000000;
   font-size: 12px;
 }
 @media only screen and (max-width: 700px) {

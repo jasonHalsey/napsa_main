@@ -1,0 +1,38 @@
+
+#top-menu .menu-item-has-children > a:first-child:after, #et-secondary-nav .menu-item-has-children > a:first-child:after {
+	content: '>';
+    width: 1.0em;
+    position: absolute;
+    margin-left: 1.25em;
+    font-family: $headerFont;
+    font-size: 22px;
+    right: -0.35em;
+    top: 0.08em;
+    font-weight: 400;
+}
+
+.nav li ul{
+	margin-top: -46px;
+	z-index: 99999;
+	background: #6f7a36; /* Old browsers */
+	background: -moz-linear-gradient(top,  #6f7a36 47%, #adbb5a 83%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #6f7a36 47%,#adbb5a 83%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #6f7a36 47%,#adbb5a 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f7a36', endColorstr='#adbb5a',GradientType=0 ); /* IE6-9 */
+	border-top: 0px solid #6F7A36;
+	li{
+		a{
+			color:$white!important;
+			font-size: 18px;
+			&after{
+				content: ' ';
+			}
+		}
+	}
+}
+
+#top-menu li li {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 18px;
+}

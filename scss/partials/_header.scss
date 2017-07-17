@@ -72,7 +72,7 @@ header{
 #et-top-navigation{
 	font-weight: 400;
 }
-#top-menu{
+#top-menu >{
 	li{
 		font-size: 22px;
 		color:$nav_color;
@@ -80,7 +80,7 @@ header{
 		&:last-child{
 			margin-right: 1.0em;
 		}
-		a{
+		> a{
 			&:hover{
 				text-decoration: underline;
 			}

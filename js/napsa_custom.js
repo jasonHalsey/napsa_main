@@ -1,13 +1,14 @@
 jQuery(document).ready(function() {
-	 // moveNavLogo();
 
-	// function moveNavLogo() {
-	//   var logo = jQuery('div.logo_container');
-	//   jQuery(logo).detach();
-	//   jQuery('.logo_drop').prepend(jQuery(logo));
-	// }
+	jQuery('p.post-meta span.published').each(function() {
+		jQuery(this).detach();
+		jQuery('h2.entry-title').prepend(jQuery(this));
+	});
+
+
 });
 
+// Add Span to first word of Hero Title for Styling
 (function () { 
     var node = jQuery("h2.et_pb_slide_title").contents().filter(function () { return this.nodeType == 3 }).first(),
         text = node.text(),
