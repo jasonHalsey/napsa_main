@@ -482,6 +482,7 @@ body.home .et_pb_slide_description {
 }
 body.home .et_pb_slide_description h2.et_pb_slide_title {
   font-size: 60px;
+  text-shadow: 2px 2px 1px black;
 }
 body.home .et_pb_slide_description h2.et_pb_slide_title span {
   font-weight: 700;
