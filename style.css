@@ -535,6 +535,9 @@ body.home .cta_block a {
   color: #0404ee;
   font-weight: 700;
 }
+body.home .cta_block .et_pb_row {
+  padding: 0 0 27px !important;
+}
 body.home .et_pb_posts h2 {
   font-size: 16px;
   margin-top: 0;
