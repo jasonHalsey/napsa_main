@@ -5,12 +5,11 @@ jQuery(document).ready(function() {
 		jQuery('h2.entry-title').prepend(jQuery(this));
 	});
 
-
 });
 
 // Add Span to first word of Hero Title for Styling
 (function () { 
-    var node = jQuery("h2.et_pb_slide_title").each().contents().filter(function () { return this.nodeType == 3 }).first(),
+    var node = jQuery("h2.et_pb_slide_title").contents().filter(function () { return this.nodeType == 3 }).first(),
         text = node.text(),
         first = text.slice(0, text.indexOf(" "));
     
@@ -20,3 +19,4 @@ jQuery(document).ready(function() {
     node[0].nodeValue = text.slice(first.length);
     node.before('<span>' + first + '</span>');
 })();
+
