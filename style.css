@@ -259,7 +259,8 @@ hr {
 
 body {
   font-family: "myriad-pro", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  color: #000000;
 }
 
 h2 {
@@ -269,8 +270,27 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  margin: 0 0 0.25em;
+}
+
 p {
   color: #000000;
+  padding-bottom: 0.75em;
+}
+
+.et_pb_row {
+  max-width: 1200px;
+}
+
+ul, .entry-content ul {
+  padding: 5px 0 0 2.3em;
+}
+
+.et_pb_text ul, .et_pb_text .entry-content ul {
+  padding: 5px 0 1.5em 2.3em;
 }
 
 .monkey_icon {
@@ -454,6 +474,16 @@ header {
   font-size: 18px;
 }
 
+#top-menu li.current-menu-item > a {
+  color: #5f5046;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 981px) {
+  .et_header_style_left #et-top-navigation nav > ul > li > a, .et_header_style_split #et-top-navigation nav > ul > li > a {
+    padding-bottom: 58px;
+  }
+}
 body.home .hero_image .et_pb_slide {
   min-height: 69vh;
   padding: 0 0;
@@ -463,11 +493,11 @@ body.home .hero_image .et_pb_slide_content {
   font-size: 18px;
   font-weight: 400;
   padding: 0.5em 0.5em;
-  background-color: green;
+  background-color: #818c3c;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -1px;
 }
 body.home .hero_image .et_pb_slide_content p {
   margin: 0 0 0.4em 0;
@@ -669,4 +699,54 @@ footer .footer_contain .footer_facebook {
 footer .copyright {
   text-align: center;
   padding: 1.0em;
+}
+
+.sub_hero_image .et_pb_slider {
+  min-height: 69vh;
+  padding: 0 0;
+}
+.sub_hero_image .et_pb_slide {
+  min-height: 69vh;
+  padding: 0 0;
+}
+.sub_hero_image .et_pb_slides {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.sub_hero_image .et_pb_slides p {
+  margin: 0 0 0.4em 0;
+  color: #ffffff;
+}
+.sub_hero_image .et_pb_slide_content {
+  background-color: #818c3c;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  padding: 0.5em 0.5em;
+}
+.sub_hero_image .et_pb_slide_description {
+  padding: 16% 0% 4% 0%;
+}
+.sub_hero_image .et_pb_slide_description h2.et_pb_slide_title {
+  font-size: 60px;
+}
+.sub_hero_image .et_pb_slide_description h2.et_pb_slide_title span {
+  font-weight: 700;
+}
+.sub_hero_image .et_pb_slides .et_pb_slider_container_inner {
+  display: table-cell;
+  vertical-align: bottom;
+}
+.sub_hero_image .et_pb_bg_layout_dark h1 {
+  font-size: 60px;
+  font-family: "proxima-nova", sans-serif;
+}
+.sub_hero_image .et_pb_slider .et_pb_container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }

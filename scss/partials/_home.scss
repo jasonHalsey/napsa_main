@@ -9,11 +9,11 @@ body.home{
 		    font-size: 18px;
 		    font-weight: 400;
 		    padding:0.5em 0.5em;
-		    background-color: green;
+		    background-color: $dk_green;
 		    position: absolute;
 		    left: 0;
 		    right: 0;
-		    bottom: 0;
+		    bottom: -1px;
 		    p{
 		    	margin:0 0 0.4em 0;
 		    	color:$white;

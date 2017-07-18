@@ -36,3 +36,14 @@
     padding: 0 10px;
     font-size: 18px;
 }
+
+#top-menu li.current-menu-item > a{
+	color:$nav_color;
+	text-decoration: underline;
+}
+
+@media only screen and (min-width: 981px) {
+	.et_header_style_left #et-top-navigation nav>ul>li>a, .et_header_style_split #et-top-navigation nav>ul>li>a {
+	    padding-bottom: 58px;
+	}
+}

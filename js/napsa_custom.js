@@ -6,17 +6,12 @@ jQuery(document).ready(function() {
 	});
 
 
-});
+	jQuery('h2.et_pb_slide_title').each(function () {
+	    
+	    var title = jQuery(this);
+	    title.html(function(i,html){
+	    	return html.replace(/^\s*([^\s]+)(\s|$)/, '<span>$1 </span>');
+	    })
+	});
 
-// Add Span to first word of Hero Title for Styling
-(function () { 
-    var node = jQuery("h2.et_pb_slide_title").contents().filter(function () { return this.nodeType == 3 }).first(),
-        text = node.text(),
-        first = text.slice(0, text.indexOf(" "));
-    
-    if (!node.length)
-        return;
-    
-    node[0].nodeValue = text.slice(first.length);
-    node.before('<span>' + first + '</span>');
-})();
+});
