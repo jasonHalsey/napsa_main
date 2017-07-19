@@ -308,6 +308,10 @@ ul, .entry-content ul {
   margin: -50px 0 0 -50px;
 }
 
+body #page-container .et_pb_button_0 {
+  font-size: 18px !important;
+}
+
 #head_contain {
   max-width: 1200px;
   display: block;
@@ -504,10 +508,11 @@ body.home .hero_image .et_pb_slide_content p {
   color: #ffffff;
 }
 body.home .et_pb_slide_description {
-  padding: 16% 0% 8% 0%;
+  padding: 16% 0% 4% 0%;
 }
 body.home .et_pb_slide_description h2.et_pb_slide_title {
   font-size: 60px;
+  text-shadow: 2px 2px 1px black;
 }
 body.home .et_pb_slide_description h2.et_pb_slide_title span {
   font-weight: 700;
@@ -564,6 +569,9 @@ body.home .cta_block p {
 body.home .cta_block a {
   color: #0404ee;
   font-weight: 700;
+}
+body.home .cta_block .et_pb_row {
+  padding: 0 0 27px !important;
 }
 body.home .et_pb_posts h2 {
   font-size: 16px;
