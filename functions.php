@@ -83,6 +83,34 @@ function infofooter_widgets_init() {
 add_action( 'widgets_init', 'infofooter_widgets_init' );
 
 
+/* Custom Post Types ------------------------------------ */ 
+
+// ----------------- Creates NAPSA NEWS Post Type
+add_action('init', 'post_type_napsa_news');
+function post_type_testi() 
+{
+  $labels = array(
+    'name' => _x('NAPSA In The News', 'post type general name'),
+    'singular_name' => _x('Napsa News', 'post type singular name'),
+    'add_new' => _x('Add New Testimonial', 'napsa_news'),
+    'add_new_item' => __('Add New NAPSA News Post')
+  );
+ 
+ $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'napsa_news' ),
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => null,
+    'supports' => array('title','excerpt', 'thumbnail')
+    ); 
+  register_post_type('napsa_news',$args);
+  flush_rewrite_rules();
+}; 
 
 
 ?>
