@@ -87,7 +87,7 @@ add_action( 'widgets_init', 'infofooter_widgets_init' );
 
 // ----------------- Creates NAPSA NEWS Post Type
 add_action('init', 'post_type_napsa_news');
-function post_type_testi() 
+function post_type_napsa_news() 
 {
   $labels = array(
     'name' => _x('NAPSA In The News', 'post type general name'),
