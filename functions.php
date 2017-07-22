@@ -112,6 +112,34 @@ function post_type_napsa_news()
   flush_rewrite_rules();
 }; 
 
+
+// ----------------- Creates NAPSA Responds Post Type
+add_action('init', 'post_type_napsa_responds');
+function post_type_napsa_responds() 
+{
+  $labels = array(
+    'name' => _x('NAPSA Responds', 'post type general name'),
+    'singular_name' => _x('Napsa Responds', 'post type singular name'),
+    'add_new' => _x('Add New NAPSA Responds Post', 'napsa_responds'),
+    'add_new_item' => __('Add New NAPSA Responds Post')
+  );
+ 
+ $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'napsa_responds' ),
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => null,
+    'supports' => array('title','excerpt', 'thumbnail')
+    ); 
+  register_post_type('napsa_responds',$args);
+  flush_rewrite_rules();
+}; 
+
 /**
  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
  *
@@ -138,14 +166,14 @@ function cmb2_hide_if_no_cats( $field ) {
   return true;
 }
 
-add_filter( 'cmb2_meta_boxes', 'cmb2_lmc_metaboxes' );
+add_filter( 'cmb2_meta_boxes', 'cmb2_napsa_metaboxes' );
 /**
  * Define the metabox and field configurations.
  *
  * @param  array $meta_boxes
  * @return array
  */
-function cmb2_lmc_metaboxes( array $meta_boxes ) {
+function cmb2_napsa_metaboxes( array $meta_boxes ) {
 
   // Start with an underscore to hide fields from custom fields list
   $prefix = '_cmb2_';
