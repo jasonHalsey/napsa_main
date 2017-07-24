@@ -104,11 +104,41 @@ function post_type_napsa_news()
     'query_var' => true,
     'rewrite' => array( 'slug' => 'napsa_news' ),
     'capability_type' => 'post',
+    'taxonomies' => array('category', 'post_tag'),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title','excerpt', 'thumbnail')
+    'supports' => array('title','excerpt', 'editor', 'thumbnail')
     ); 
   register_post_type('napsa_news',$args);
+  flush_rewrite_rules();
+}; 
+
+
+// ----------------- Creates NAPSA Member Post Type
+add_action('init', 'post_type_member_news');
+function post_type_member_news() 
+{
+  $labels = array(
+    'name' => _x('Members In The News', 'post type general name'),
+    'singular_name' => _x('Member News', 'post type singular name'),
+    'add_new' => _x('Add New Member News Post', 'member_news'),
+    'add_new_item' => __('Add New Member News Post')
+  );
+ 
+ $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'member_news' ),
+    'capability_type' => 'post',
+    'taxonomies' => array('category', 'post_tag'),
+    'hierarchical' => false,
+    'menu_position' => null,
+    'supports' => array('title','excerpt', 'editor', 'thumbnail')
+    ); 
+  register_post_type('member_news',$args);
   flush_rewrite_rules();
 }; 
 
@@ -132,9 +162,11 @@ function post_type_napsa_responds()
     'query_var' => true,
     'rewrite' => array( 'slug' => 'napsa_responds' ),
     'capability_type' => 'post',
+    // 'taxonomies'          => array( 'category' ),
+    'taxonomies' => array('category', 'post_tag'),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title','thumbnail')
+    'supports' => array('title','excerpt', 'editor', 'thumbnail')
     ); 
   register_post_type('napsa_responds',$args);
   flush_rewrite_rules();
@@ -143,7 +175,7 @@ function post_type_napsa_responds()
 /**
  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
  *
- * @category Confluence
+ * @category NAPSA
  * @package  Metaboxes
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
@@ -181,11 +213,11 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
 
 
   /**
-   * Fishing Report Metabox Layout
+   * NAPSA Responds Metabox Layout
    */
-  $meta_boxes['report_metabox'] = array(
-    'id'            => 'report_metabox',
-    'title'         => __( 'Fishing Report', 'cmb2' ),
+  $meta_boxes['respond_metabox'] = array(
+    'id'            => 'respond_metabox',
+    'title'         => __( 'NAPSA Responds', 'cmb2' ),
     'object_types'  => array( 'napsa_responds' ), // Post type
     'context'       => 'normal',
     'priority'      => 'high',
@@ -193,12 +225,66 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
     'fields'        => array(
       
       array(
-        'name'    => __( 'Sub-title', 'cmb2' ),
-        'id'      => $prefix . 'sub_title',
-        'type' => 'text_medium',
+        'name'    => __( 'Original Publish Date', 'cmb2' ),
+        'id'      => $prefix . 'pub_date',
+        'type' => 'text_date',
       ),
     )
   );
+
+   /**
+   * NAPSA In The News Metabox Layout
+   */
+  $meta_boxes['news_metabox'] = array(
+    'id'            => 'news_metabox',
+    'title'         => __( 'NAPSA In The News', 'cmb2' ),
+    'object_types'  => array( 'napsa_news' ), // Post type
+    'context'       => 'normal',
+    'priority'      => 'high',
+    'show_names'    => true, // Show field names on the left
+    'fields'        => array(
+      
+      array(
+        'name'    => __( 'Original Publish Date', 'cmb2' ),
+        'id'      => $prefix . 'pub_date',
+        'type' => 'text_date',
+      ),
+      array(
+        'name'    => __( 'Original Author', 'cmb2' ),
+        'id'      => $prefix . 'news_author',
+        'type' => 'text_medium',
+      ),   
+    )
+  );
+
+
+  /**
+   * NAPSA Members In The News Metabox Layout
+   */
+  $meta_boxes['member_news_metabox'] = array(
+    'id'            => 'member_news_metabox',
+    'title'         => __( 'NAPSA Members In The News', 'cmb2' ),
+    'object_types'  => array( 'member_news' ), // Post type
+    'context'       => 'normal',
+    'priority'      => 'high',
+    'show_names'    => true, // Show field names on the left
+    'fields'        => array(
+      
+      array(
+        'name'    => __( 'Original Publish Date', 'cmb2' ),
+        'id'      => $prefix . 'pub_date',
+        'type' => 'text_date',
+      ),
+      array(
+        'name'    => __( 'Member Sanctuary', 'cmb2' ),
+        'id'      => $prefix . 'member_sanctuary',
+        'type' => 'text_medium',
+      ),   
+    )
+  );
+
+
+
   return $meta_boxes;
 }
 
