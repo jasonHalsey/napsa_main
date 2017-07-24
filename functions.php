@@ -134,7 +134,7 @@ function post_type_napsa_responds()
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title','excerpt', 'thumbnail')
+    'supports' => array('title','thumbnail')
     ); 
   register_post_type('napsa_responds',$args);
   flush_rewrite_rules();
@@ -143,7 +143,7 @@ function post_type_napsa_responds()
 /**
  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
  *
- * @category napsa
+ * @category Confluence
  * @package  Metaboxes
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
@@ -166,67 +166,42 @@ function cmb2_hide_if_no_cats( $field ) {
   return true;
 }
 
-add_filter( 'cmb2_meta_boxes', 'cmb2_napsa_metaboxes' );
+add_filter( 'cmb2_meta_boxes', 'cmb2_lmc_metaboxes' );
 /**
  * Define the metabox and field configurations.
  *
  * @param  array $meta_boxes
  * @return array
  */
-function cmb2_napsa_metaboxes( array $meta_boxes ) {
+function cmb2_lmc_metaboxes( array $meta_boxes ) {
 
   // Start with an underscore to hide fields from custom fields list
   $prefix = '_cmb2_';
 
+
+
   /**
-   * NAPSA NEWS Metabox Layout
+   * Fishing Report Metabox Layout
    */
-  $meta_boxes['napsa_news_metabox'] = array(
-    'id'            => 'napsa_news_metabox',
-    'title'         => __( 'NAPSA In The News', 'cmb2' ),
-    'object_types'  => array( 'napsa_news' ), // Post type
+  $meta_boxes['report_metabox'] = array(
+    'id'            => 'report_metabox',
+    'title'         => __( 'Fishing Report', 'cmb2' ),
+    'object_types'  => array( 'napsa_responds' ), // Post type
     'context'       => 'normal',
     'priority'      => 'high',
     'show_names'    => true, // Show field names on the left
     'fields'        => array(
       
       array(
-        'name'    => __( 'Original Date Published', 'cmb2' ),
-        'id'      => $prefix . 'original_date',
-        'type' => 'text_date',
-      ),
-      array(
-        'name'    => __( 'Original Author', 'cmb2' ),
-        'id'      => $prefix . 'original_author',
+        'name'    => __( 'Sub-title', 'cmb2' ),
+        'id'      => $prefix . 'sub_title',
         'type' => 'text_medium',
-      )
+      ),
     )
   );
+  return $meta_boxes;
 }
 
-
-
-/**
- * Sample template tag function for outputting a cmb2 file_list
- *
- * @param  string  $file_list_meta_key The field meta key. ('wiki_test_file_list')
- * @param  string  $img_size           Size of image to show
- */
-function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
-
-    // Get the list of files
-    $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
-
-    echo '<div class="file-list-wrap">';
-    // Loop through them and output an image
-    foreach ( (array) $files as $attachment_id => $attachment_url ) {
-        echo '<div class="file-list-image">';
-        echo wp_get_attachment_image_src($attachment_url);
-        echo wp_get_attachment_image( $attachment_url);
-        echo '</div>';
-    }
-    echo '</div>';
-}
 
 
 ?>
