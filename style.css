@@ -772,3 +772,37 @@ footer .copyright {
   max-width: 100%;
   margin: 0 auto;
 }
+
+.feed_page_container {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+}
+.feed_page_container::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.feed_page_container .feed_container {
+  width: calc(75% - 35px);
+  float: left;
+  margin-left: 20px;
+}
+.feed_page_container .feed_sidebar {
+  width: calc(25% - 25px);
+  float: left;
+  margin-left: 20px;
+}
+
+.single_feed_container {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+}
+.single_feed_container::after {
+  clear: both;
+  content: "";
+  display: block;
+}

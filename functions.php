@@ -82,6 +82,22 @@ function infofooter_widgets_init() {
 }
 add_action( 'widgets_init', 'infofooter_widgets_init' );
 
+function member_sanc_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'Member Sanc Section',
+    'id'            => 'member_list',
+    'before_widget' => '<div class="member_sanc-content">',
+    'after_widget' => "</div>",
+    'before_title' => '<h3 class="member_sanc-title">',
+    'after_title' => '</h3>',
+  ) );
+
+}
+add_action( 'widgets_init', 'member_sanc_widgets_init' );
+
+
+
 
 /* Custom Post Types ------------------------------------ */ 
 
@@ -257,13 +273,12 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
     )
   );
 
-
   /**
    * NAPSA Members In The News Metabox Layout
    */
   $meta_boxes['member_news_metabox'] = array(
     'id'            => 'member_news_metabox',
-    'title'         => __( 'NAPSA Members In The News', 'cmb2' ),
+    'title'         => __( 'NAPSA In The News', 'cmb2' ),
     'object_types'  => array( 'member_news' ), // Post type
     'context'       => 'normal',
     'priority'      => 'high',
@@ -272,22 +287,100 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
       
       array(
         'name'    => __( 'Original Publish Date', 'cmb2' ),
-        'id'      => $prefix . 'pub_date',
+        'id'      => $prefix . 'member_pub_date',
         'type' => 'text_date',
       ),
       array(
-        'name'    => __( 'Member Sanctuary', 'cmb2' ),
-        'id'      => $prefix . 'member_sanctuary',
+        'name'    => __( 'Original Publication', 'cmb2' ),
+        'id'      => $prefix . 'member_news_publication',
         'type' => 'text_medium',
       ),   
     )
   );
 
 
-
   return $meta_boxes;
 }
 
+
+
+// Register Custom Taxonomy
+function sanctuaries_taxonomy() {
+
+  $labels = array(
+    'name'                       => _x( 'Member Sanctuary', 'Sanctuary General Name', 'text_domain' ),
+    'singular_name'              => _x( 'Sanctuary', 'Sanctuary Singular Name', 'text_domain' ),
+    'menu_name'                  => __( 'Sanctuary', 'text_domain' ),
+    'all_items'                  => __( 'All Items', 'text_domain' ),
+    'parent_item'                => __( 'Parent Item', 'text_domain' ),
+    'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+    'new_item_name'              => __( 'New Item Name', 'text_domain' ),
+    'add_new_item'               => __( 'Add New Item', 'text_domain' ),
+    'edit_item'                  => __( 'Edit Item', 'text_domain' ),
+    'update_item'                => __( 'Update Item', 'text_domain' ),
+    'view_item'                  => __( 'View Item', 'text_domain' ),
+    'separate_items_with_commas' => __( ' ', 'text_domain' ),
+    'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+    'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+    'popular_items'              => __( 'Popular Items', 'text_domain' ),
+    'search_items'               => __( 'Search Items', 'text_domain' ),
+    'not_found'                  => __( 'Not Found', 'text_domain' ),
+    'no_terms'                   => __( 'No items', 'text_domain' ),
+    'items_list'                 => __( 'Items list', 'text_domain' ),
+    'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+  );
+  $args = array(
+    'labels'                     => $labels,
+    'hierarchical'               => false,
+    'public'                     => true,
+    'show_ui'                    => true,
+    'show_admin_column'          => true,
+    'show_in_nav_menus'          => true,
+    'show_tagcloud'              => true,
+  );
+  register_taxonomy( 'sanctuary', array( 'member_news' ), $args );
+
+}
+add_action( 'init', 'sanctuaries_taxonomy', 0 );
+
+// Register Custom Taxonomy
+function member_date_taxonomy() {
+
+  $labels = array(
+    'name'                       => _x( 'Published Date', 'Date General Name', 'text_domain' ),
+    'singular_name'              => _x( 'Published Date', 'Date Singular Name', 'text_domain' ),
+    'menu_name'                  => __( 'Published Date', 'text_domain' ),
+    'all_items'                  => __( 'All Items', 'text_domain' ),
+    'parent_item'                => __( 'Parent Item', 'text_domain' ),
+    'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+    'new_item_name'              => __( 'New Item Name', 'text_domain' ),
+    'add_new_item'               => __( 'Add New Item', 'text_domain' ),
+    'edit_item'                  => __( 'Edit Item', 'text_domain' ),
+    'update_item'                => __( 'Update Item', 'text_domain' ),
+    'view_item'                  => __( 'View Item', 'text_domain' ),
+    'separate_items_with_commas' => __( ' ', 'text_domain' ),
+    'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+    'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+    'popular_items'              => __( 'Popular Items', 'text_domain' ),
+    'search_items'               => __( 'Search Items', 'text_domain' ),
+    'not_found'                  => __( 'Not Found', 'text_domain' ),
+    'no_terms'                   => __( 'No items', 'text_domain' ),
+    'items_list'                 => __( 'Items list', 'text_domain' ),
+    'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+  );
+  $args = array(
+    'labels'                     => $labels,
+    'hierarchical'               => false,
+    'public'                     => true,
+    'show_ui'                    => true,
+    'show_admin_column'          => true,
+    'show_in_nav_menus'          => true,
+    'show_tagcloud'              => true,
+  );
+  register_taxonomy( 'member_date', array( 'member_news' ), $args );
+
+}
+add_action( 'init', 'member_date_taxonomy', 0 );
 
 
 ?>
