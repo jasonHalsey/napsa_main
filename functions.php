@@ -307,7 +307,6 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
     )
   );
 
-
   return $meta_boxes;
 }
 
@@ -458,13 +457,14 @@ function vb_filter_posts() {
 
     $qry = new WP_Query($args);
 
+
     ob_start();
         if ($qry->have_posts()) :
             while ($qry->have_posts()) : $qry->the_post(); ?>
 
                 <article class="loop-item">
                     <header>
-                        <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        <h2 class="entry-title"> <?php echo get_the_date(); ?> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     </header>
                     <div class="entry-summary">
                         <?php the_excerpt(); ?>

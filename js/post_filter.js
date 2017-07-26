@@ -96,8 +96,7 @@
 		
 		jQuery('a[data-term="view-all"]').trigger('click');
 		// jQuery('a[data-term=all-terms]').trigger('click');
-	
-		console.log('passed');
+
 	});
 
 })(jQuery);
