@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-<div id="main-content biggerballs">
+<div id="main-content">
 	<div class="container">
+		<h1>This is the index.php</h1>
 		<div id="content-area" class="clearfix">
 			<div id="left-area">
 		<?php

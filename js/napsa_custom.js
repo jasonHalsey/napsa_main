@@ -13,5 +13,5 @@ jQuery(document).ready(function() {
 	    	return html.replace(/^\s*([^\s]+)(\s|$)/, '<span>$1 </span>');
 	    })
 	});
-});
 
+});

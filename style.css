@@ -806,3 +806,14 @@ footer .copyright {
   content: "";
   display: block;
 }
+
+#container-async div.content {
+  width: calc(75% - 35px);
+  float: left;
+  margin-left: 20px;
+}
+#container-async section.filter_sidebar {
+  width: calc(25% - 25px);
+  float: left;
+  margin-left: 20px;
+}
