@@ -91,11 +91,11 @@
 	        };
 
 	        // Run query
-	        get_posts($params);
+	        // get_posts($params);
+	        get_posts($params, jQuery('.closest-container'));
 		});
 		
 		jQuery('a[data-term="view-all"]').trigger('click');
-		// jQuery('a[data-term=all-terms]').trigger('click');
 
 	});
 

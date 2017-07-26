@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: results
+Template Name: Feed Page
 */
   get_header();
 ?>
@@ -8,17 +8,14 @@ Template Name: results
   <h1><?php the_title(); ?> </h1>
   <section class="feed_container">
     <?php if ( have_posts() ) :
-				while ( have_posts() ) : the_post();?>
-    <div class="member_news_post">
-
-      <?php the_content(); ?>
-<?php
-					endwhile;
-
-				endif;
-			?>
+		while ( have_posts() ) : the_post();?>
+    	<div class="member_news_post">
+			<?php the_content(); ?>
+	<?php
+		endwhile;
+		endif;
+	?>
   </section>
 </section>
-
 
 <?php get_footer(); ?>

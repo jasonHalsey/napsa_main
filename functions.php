@@ -463,12 +463,7 @@ function vb_filter_posts() {
             while ($qry->have_posts()) : $qry->the_post(); ?>
 
                 <article class="loop-item">
-                    <header>
-                        <h2 class="entry-title"> <?php echo get_the_date(); ?> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                    </header>
-                    <div class="entry-summary">
-                        <?php the_excerpt(); ?>
-                    </div>
+                    <span> <strong><?php echo get_the_date('d/m/Y'); ?>:&nbsp;</strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
                 </article>
 
             <?php endwhile;
@@ -519,7 +514,7 @@ function vb_filter_posts_sc($atts) {
 
     if (count($terms)) :
         ob_start(); ?>
-            <div id="container-async" class="sc-ajax-filter">
+            <div id="container-async" class="sc-ajax-filter closest-container’">
                 <div class="content">
                   <div class="status"></div>
                 </div>

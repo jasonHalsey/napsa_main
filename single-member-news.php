@@ -12,11 +12,16 @@
   <?php if ( is_single() ) : ?>
 
   <section class="member_news_title">
-    <h1><?php the_title() ?></h1>
-    
+    <h2><?php the_title() ?></h2>
+
   </section>
 
   <section class="member_news_content">
+    <h3><?php 
+      $sanctuary_name = get_the_term_list( $post->ID, 'sanctuary', '<h2>', ', ', '</h2>' );
+      echo strip_tags($sanctuary_name);
+    ?></h3>
+    <?php echo get_post_meta( $post->ID, '_cmb2_member_pub_date', true ); ?>
     <p><?php the_content() ?></p>
   </section>
 
