@@ -501,9 +501,12 @@ add_action('wp_ajax_nopriv_do_filter_posts', 'vb_filter_posts');
  * Shortocde for displaying terms filter and results on page
  */
 function vb_filter_posts_sc($atts) {
-
+    $term = $atts['term'];
+    if ($term == 'view-all') {
+      $term = array('member_date', 'sanctuary');
+    }
     $a = shortcode_atts( array(
-        'tax'      => 'member_date', // Taxonomy
+        'tax'      => $term, // Taxonomy
         'terms'    => false, // Get specific taxonomy terms only
         'active'   => false, // Set active term by ID
         'per_page' => 12 // How many posts per page
@@ -511,6 +514,9 @@ function vb_filter_posts_sc($atts) {
 
     $result = NULL;
     $terms  = get_terms($a['tax']);
+
+    $currentLabel = '';
+   
 
     if (count($terms)) :
         ob_start(); ?>
@@ -520,7 +526,17 @@ function vb_filter_posts_sc($atts) {
                 </div>
                 <section class="filter_sidebar">
                   <ul class="nav-filter">
+                      
                       <?php foreach ($terms as $term) : ?>
+                      <?php
+                       
+                        $taxonomy = get_taxonomy($term->taxonomy);
+                        $labels = get_taxonomy_labels($taxonomy);
+                        if (!empty($labels) && ($labels->name != $currentLabel) && ($term->name != 'View All') )  {
+                          $currentLabel = $labels->name;
+                          echo '<h3>'.$currentLabel.'</h3>';  
+                        }
+                      ?>
                           <li<?php if ($term->term_id == $a['active']) :?> class="active"<?php endif; ?>>
                               <a href="<?php echo get_term_link( $term, $term->taxonomy ); ?>" data-filter="<?php echo $term->taxonomy; ?>" data-term="<?php echo $term->slug; ?>" data-page="1">
                                   <?php echo $term->name; ?>
