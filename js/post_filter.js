@@ -61,6 +61,7 @@
 		/**
 		 * Bind get_posts to tag cloud and navigation
 		 */
+		
 		jQuery('#container-async').on('click', 'a[data-filter], .pagination a', function(event) {
 			if(event.preventDefault) { event.preventDefault(); }
 

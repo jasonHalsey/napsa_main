@@ -129,7 +129,7 @@ function post_type_napsa_news()
     'query_var' => true,
     'rewrite' => array( 'slug' => 'napsa_news' ),
     'capability_type' => 'post',
-    'taxonomies' => array('category', 'post_tag'),
+    // 'taxonomies' => array('category', 'post_tag'),
     'hierarchical' => false,
     'menu_position' => null,
     'supports' => array('title','excerpt', 'editor', 'thumbnail')
@@ -313,6 +313,7 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
 
 
 require_once( __DIR__ . '/inc/member_news_functions.php'); 
+// require_once( __DIR__ . '/inc/napsa_news_functions.php'); 
 
 
 /**

@@ -1,12 +1,12 @@
 <?php
 
 // Register Members In The News Custom Taxonomy
-function sanctuaries_taxonomy() {
+function napsa_category_taxonomy() {
 
   $labels = array(
-    'name'                       => _x( 'Member Sanctuary', 'Sanctuary General Name', 'text_domain' ),
-    'singular_name'              => _x( 'Sanctuary', 'Sanctuary Singular Name', 'text_domain' ),
-    'menu_name'                  => __( 'Sanctuary', 'text_domain' ),
+    'name'                       => _x( 'Categories', 'Sanctuary General Name', 'text_domain' ),
+    'singular_name'              => _x( 'Category', 'Sanctuary Singular Name', 'text_domain' ),
+    'menu_name'                  => __( 'Categories', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),
     'parent_item'                => __( 'Parent Item', 'text_domain' ),
     'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
@@ -34,13 +34,13 @@ function sanctuaries_taxonomy() {
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
   );
-  register_taxonomy( 'sanctuary', array( 'member_news' ), $args );
+  register_taxonomy( 'napsa_categories', array( 'napsa_news' ), $args );
 
 }
-add_action( 'init', 'sanctuaries_taxonomy', 0 );
+add_action( 'init', 'napsa_category_taxonomy', 0 );
 
 // Register Custom Taxonomy
-function member_date_taxonomy() {
+function napsa_date_taxonomy() {
 
   $labels = array(
     'name'                       => _x( 'Published Date', 'Date General Name', 'text_domain' ),
@@ -73,14 +73,14 @@ function member_date_taxonomy() {
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
   );
-  register_taxonomy( 'member_date', array( 'member_news' ), $args );
+  register_taxonomy( 'napsa_date', array( 'napsa_news' ), $args );
 
 }
-add_action( 'init', 'member_date_taxonomy', 0 );
+add_action( 'init', 'napsa_date_taxonomy', 0 );
 
 
 // Register Tags Taxonomy
-function member_tag_taxonomy() {
+function napsa_tag_taxonomy() {
 
   $labels = array(
     'name'                       => _x( 'Tags', 'Date General Name', 'text_domain' ),
@@ -113,13 +113,13 @@ function member_tag_taxonomy() {
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
   );
-  register_taxonomy( 'member_tag', array( 'member_news' ), $args );
+  register_taxonomy( 'napsa_tag', array( 'napsa_news' ), $args );
 
 }
-add_action( 'init', 'member_tag_taxonomy', 0 );
+add_action( 'init', 'napsa_tag_taxonomy', 0 );
 
 
-function vb_filter_posts() {
+function napsa_filter_posts() {
 
     if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'napsa' ) )
         die('Permission denied');
@@ -176,7 +176,7 @@ function vb_filter_posts() {
      */
     $args = [
         'paged'          => $page,
-        'post_type'      => 'member_news',
+        'post_type'      => 'napsa_news',
         'post_status'    => 'publish',
         'posts_per_page' => $qty,
         'tax_query'      => $tax_qry
@@ -220,8 +220,8 @@ function vb_filter_posts() {
     die(json_encode($response));
 
 }
-add_action('wp_ajax_do_filter_posts', 'vb_filter_posts');
-add_action('wp_ajax_nopriv_do_filter_posts', 'vb_filter_posts');
+add_action('wp_ajax_do_filter_posts', 'napsa_filter_posts');
+add_action('wp_ajax_nopriv_do_filter_posts', 'napsa_filter_posts');
 
 
 /**
@@ -231,13 +231,14 @@ function vb_filter_posts_sc($atts) {
 
     $taxonomies = array();
     if ($atts['term'] == 'view-all') {
-      $taxonomies = array('member_date', 'sanctuary', 'member_tag');
+      $taxonomies = array('napsa_date', 'napsa_categories', 'napsa_tag');
     } else {
       $taxonomies = array($atts['term']);
     }
 
    
-    $result = '<div id="container-async" class="sc-ajax-filter closest-container">
+    // $result = '<div id="container-async" class="sc-ajax-filter closest-container">
+      $result = '<div class="container-async sc-ajax-filter closest-container">
                 <div class="content">
                   <div class="status"></div>
                 </div>
