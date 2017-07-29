@@ -311,9 +311,9 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
 }
 
 
-
-require_once( __DIR__ . '/inc/member_news_functions.php'); 
-// require_once( __DIR__ . '/inc/napsa_news_functions.php'); 
+require_once(__DIR__ .'/inc/tax_ajax.php');
+require_once(__DIR__ . '/inc/member_news_functions.php'); 
+require_once( __DIR__ . '/inc/napsa_news_functions.php'); 
 
 
 /**
