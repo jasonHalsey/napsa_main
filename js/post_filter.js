@@ -10,8 +10,10 @@
 			$container = $('#container-async');
 			$content   = $container.find('.content');
 	        $status    = $container.find('.status');
+	        $napsa_sidebar = $container.find('.napsa_sidebar');
 
 			$status.text('Loading posts ...');
+			$napsa_sidebar.load( '' + templateDir + '/inc/napsa_sidebar_content.php');
 
 			$.ajax({
 	            		url: napsa.ajax_url,

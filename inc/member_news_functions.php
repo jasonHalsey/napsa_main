@@ -4,7 +4,7 @@
 function sanctuaries_taxonomy() {
 
   $labels = array(
-    'name'                       => _x( 'Member Sanctuary', 'Sanctuary General Name', 'text_domain' ),
+    'name'                       => _x( 'Sort News By Member', 'Sanctuary General Name', 'text_domain' ),
     'singular_name'              => _x( 'Sanctuary', 'Sanctuary Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Sanctuary', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),

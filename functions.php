@@ -4,6 +4,13 @@
 /* ------------------------------------ */ 
 	add_filter('show_admin_bar', '__return_false');
 
+// Changing excerpt more
+   function new_excerpt_more($more) {
+   global $post;
+   return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+   }
+   add_filter('excerpt_more', 'new_excerpt_more');
+
 
 /*  Add Child-Theme Capabilities
 /* ------------------------------------ */ 
@@ -188,7 +195,7 @@ function post_type_napsa_responds()
     'rewrite' => array( 'slug' => 'napsa_responds' ),
     'capability_type' => 'post',
     // 'taxonomies'          => array( 'category' ),
-    'taxonomies' => array('category', 'post_tag'),
+    // 'taxonomies' => array('category', 'post_tag'),
     'hierarchical' => false,
     'menu_position' => null,
     'supports' => array('title','excerpt', 'editor', 'thumbnail')
@@ -197,123 +204,124 @@ function post_type_napsa_responds()
   flush_rewrite_rules();
 }; 
 
-/**
- * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
- *
- * @category NAPSA
- * @package  Metaboxes
- * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
- */
+// /**
+//  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
+//  *
+//  * @category NAPSA
+//  * @package  Metaboxes
+//  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+//  * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
+//  */
 
-require_once 'cmb/init.php';
+// require_once 'cmb/init.php';
 
-/**
- * Conditionally displays a field when used as a callback in the 'show_on_cb' field parameter
- *
- * @param  CMB2_Field object $field Field object
- *
- * @return bool                     True if metabox should show
- */
-function cmb2_hide_if_no_cats( $field ) {
-  // Don't show this field if not in the cats category
-  if ( ! has_tag( 'cats', $field->object_id ) ) {
-    return false;
-  }
-  return true;
-}
+// /**
+//  * Conditionally displays a field when used as a callback in the 'show_on_cb' field parameter
+//  *
+//  * @param  CMB2_Field object $field Field object
+//  *
+//  * @return bool                     True if metabox should show
+//  */
+// function cmb2_hide_if_no_cats( $field ) {
+//   // Don't show this field if not in the cats category
+//   if ( ! has_tag( 'cats', $field->object_id ) ) {
+//     return false;
+//   }
+//   return true;
+// }
 
-add_filter( 'cmb2_meta_boxes', 'cmb2_lmc_metaboxes' );
-/**
- * Define the metabox and field configurations.
- *
- * @param  array $meta_boxes
- * @return array
- */
-function cmb2_lmc_metaboxes( array $meta_boxes ) {
+// add_filter( 'cmb2_meta_boxes', 'cmb2_lmc_metaboxes' );
+// /**
+//  * Define the metabox and field configurations.
+//  *
+//  * @param  array $meta_boxes
+//  * @return array
+//  */
+// function cmb2_lmc_metaboxes( array $meta_boxes ) {
 
-  // Start with an underscore to hide fields from custom fields list
-  $prefix = '_cmb2_';
+//   // Start with an underscore to hide fields from custom fields list
+//   $prefix = '_cmb2_';
 
 
 
-  /**
-   * NAPSA Responds Metabox Layout
-   */
-  $meta_boxes['respond_metabox'] = array(
-    'id'            => 'respond_metabox',
-    'title'         => __( 'NAPSA Responds', 'cmb2' ),
-    'object_types'  => array( 'napsa_responds' ), // Post type
-    'context'       => 'normal',
-    'priority'      => 'high',
-    'show_names'    => true, // Show field names on the left
-    'fields'        => array(
+//   /**
+//    * NAPSA Responds Metabox Layout
+//    */
+//   $meta_boxes['respond_metabox'] = array(
+//     'id'            => 'respond_metabox',
+//     'title'         => __( 'NAPSA Responds', 'cmb2' ),
+//     'object_types'  => array( 'napsa_responds' ), // Post type
+//     'context'       => 'normal',
+//     'priority'      => 'high',
+//     'show_names'    => true, // Show field names on the left
+//     'fields'        => array(
       
-      array(
-        'name'    => __( 'Original Publish Date', 'cmb2' ),
-        'id'      => $prefix . 'pub_date',
-        'type' => 'text_date',
-      ),
-    )
-  );
+//       array(
+//         'name'    => __( 'Original Publish Date', 'cmb2' ),
+//         'id'      => $prefix . 'pub_date',
+//         'type' => 'text_date',
+//       ),
+//     )
+//   );
 
-   /**
-   * NAPSA In The News Metabox Layout
-   */
-  $meta_boxes['news_metabox'] = array(
-    'id'            => 'news_metabox',
-    'title'         => __( 'NAPSA In The News', 'cmb2' ),
-    'object_types'  => array( 'napsa_news' ), // Post type
-    'context'       => 'normal',
-    'priority'      => 'high',
-    'show_names'    => true, // Show field names on the left
-    'fields'        => array(
+//    /**
+//    * NAPSA In The News Metabox Layout
+//    */
+//   $meta_boxes['news_metabox'] = array(
+//     'id'            => 'news_metabox',
+//     'title'         => __( 'NAPSA In The News', 'cmb2' ),
+//     'object_types'  => array( 'napsa_news' ), // Post type
+//     'context'       => 'normal',
+//     'priority'      => 'high',
+//     'show_names'    => true, // Show field names on the left
+//     'fields'        => array(
       
-      array(
-        'name'    => __( 'Original Publish Date', 'cmb2' ),
-        'id'      => $prefix . 'pub_date',
-        'type' => 'text_date',
-      ),
-      array(
-        'name'    => __( 'Original Author', 'cmb2' ),
-        'id'      => $prefix . 'news_author',
-        'type' => 'text_medium',
-      ),   
-    )
-  );
+//       array(
+//         'name'    => __( 'Original Publish Date', 'cmb2' ),
+//         'id'      => $prefix . 'pub_date',
+//         'type' => 'text_date',
+//       ),
+//       array(
+//         'name'    => __( 'Original Author', 'cmb2' ),
+//         'id'      => $prefix . 'news_author',
+//         'type' => 'text_medium',
+//       ),   
+//     )
+//   );
 
-  /**
-   * NAPSA Members In The News Metabox Layout
-   */
-  $meta_boxes['member_news_metabox'] = array(
-    'id'            => 'member_news_metabox',
-    'title'         => __( 'NAPSA In The News', 'cmb2' ),
-    'object_types'  => array( 'member_news' ), // Post type
-    'context'       => 'normal',
-    'priority'      => 'high',
-    'show_names'    => true, // Show field names on the left
-    'fields'        => array(
+//   /**
+//    * NAPSA Members In The News Metabox Layout
+//    */
+//   $meta_boxes['member_news_metabox'] = array(
+//     'id'            => 'member_news_metabox',
+//     'title'         => __( 'NAPSA In The News', 'cmb2' ),
+//     'object_types'  => array( 'member_news' ), // Post type
+//     'context'       => 'normal',
+//     'priority'      => 'high',
+//     'show_names'    => true, // Show field names on the left
+//     'fields'        => array(
       
-      array(
-        'name'    => __( 'Original Publish Date', 'cmb2' ),
-        'id'      => $prefix . 'member_pub_date',
-        'type' => 'text_date',
-      ),
-      array(
-        'name'    => __( 'Original Publication', 'cmb2' ),
-        'id'      => $prefix . 'member_news_publication',
-        'type' => 'text_medium',
-      ),   
-    )
-  );
+//       array(
+//         'name'    => __( 'Original Publish Date', 'cmb2' ),
+//         'id'      => $prefix . 'member_pub_date',
+//         'type' => 'text_date',
+//       ),
+//       array(
+//         'name'    => __( 'Original Publication', 'cmb2' ),
+//         'id'      => $prefix . 'member_news_publication',
+//         'type' => 'text_medium',
+//       ),   
+//     )
+//   );
 
-  return $meta_boxes;
-}
+//   return $meta_boxes;
+// }
 
 
-require_once(__DIR__ .'/inc/tax_ajax.php');
+require_once(__DIR__ . '/inc/tax_ajax.php');
 require_once(__DIR__ . '/inc/member_news_functions.php'); 
-require_once( __DIR__ . '/inc/napsa_news_functions.php'); 
+require_once(__DIR__ . '/inc/napsa_news_functions.php'); 
+require_once(__DIR__ . '/inc/napsa_responds_functions.php'); 
 
 
 /**

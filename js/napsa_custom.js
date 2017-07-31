@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+	console.log(templateDir);
 
 	jQuery('p.post-meta span.published').each(function() {
 		jQuery(this).detach();

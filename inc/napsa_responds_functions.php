@@ -1,12 +1,12 @@
 <?php
 
 // Register Members In The News Custom Taxonomy
-function napsa_category_taxonomy() {
+function responds_category_taxonomy() {
 
   $labels = array(
-    'name'                       => _x( 'Categories', 'Sanctuary General Name', 'text_domain' ),
+    'name'                       => _x( 'Category', 'Sanctuary General Name', 'text_domain' ),
     'singular_name'              => _x( 'Category', 'Sanctuary Singular Name', 'text_domain' ),
-    'menu_name'                  => __( 'Categories', 'text_domain' ),
+    'menu_name'                  => __( 'Category', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),
     'parent_item'                => __( 'Parent Item', 'text_domain' ),
     'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
@@ -34,13 +34,13 @@ function napsa_category_taxonomy() {
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
   );
-  register_taxonomy( 'napsa_categories', array( 'napsa_news' ), $args );
+  register_taxonomy( 'responds_category', array( 'napsa_responds' ), $args );
 
 }
-add_action( 'init', 'napsa_category_taxonomy', 0 );
+add_action( 'init', 'responds_category_taxonomy', 0 );
 
 // Register Custom Taxonomy
-function napsa_date_taxonomy() {
+function responds_date_taxonomy() {
 
   $labels = array(
     'name'                       => _x( 'Published Date', 'Date General Name', 'text_domain' ),
@@ -73,14 +73,14 @@ function napsa_date_taxonomy() {
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
   );
-  register_taxonomy( 'napsa_date', array( 'napsa_news' ), $args );
+  register_taxonomy( 'responds_date', array( 'napsa_responds' ), $args );
 
 }
-add_action( 'init', 'napsa_date_taxonomy', 0 );
+add_action( 'init', 'responds_date_taxonomy', 0 );
 
 
 // Register Tags Taxonomy
-function napsa_tag_taxonomy() {
+function responds_tag_taxonomy() {
 
   $labels = array(
     'name'                       => _x( 'Tags', 'Date General Name', 'text_domain' ),
@@ -113,7 +113,13 @@ function napsa_tag_taxonomy() {
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
   );
-  register_taxonomy( 'napsa_tag', array( 'napsa_news' ), $args );
+  register_taxonomy( 'responds_tag', array( 'napsa_responds' ), $args );
 
 }
-add_action( 'init', 'napsa_tag_taxonomy', 0 );
+add_action( 'init', 'responds_tag_taxonomy', 0 );
+
+
+
+
+
+?>

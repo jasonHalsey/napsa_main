@@ -33,6 +33,14 @@
 	<script src="https://use.typekit.net/rrm5chi.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+	<script type="text/javascript">
+   	 // var templateDir = "<?php get_stylesheet_directory(); ?>";
+   	 // var templateDir = "<?php get_stylesheet_directory(); ?>"
+   	  var templateDir = "<?php echo get_stylesheet_directory_uri(); ?>"
+   	 
+
+	</script>
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
