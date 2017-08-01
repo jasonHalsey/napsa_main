@@ -139,7 +139,7 @@ function post_type_napsa_news()
     // 'taxonomies' => array('category', 'post_tag'),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title','excerpt', 'editor', 'thumbnail')
+    'supports' => array('title','editor', 'thumbnail')
     ); 
   register_post_type('napsa_news',$args);
   flush_rewrite_rules();
@@ -168,7 +168,7 @@ function post_type_member_news()
     // 'taxonomies' => array('category', 'post_tag'),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title','excerpt', 'editor', 'thumbnail')
+    'supports' => array('title', 'editor', 'thumbnail')
     ); 
   register_post_type('member_news',$args);
   flush_rewrite_rules();
@@ -198,37 +198,37 @@ function post_type_napsa_responds()
     // 'taxonomies' => array('category', 'post_tag'),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title','excerpt', 'editor', 'thumbnail')
+    'supports' => array('title', 'editor', 'thumbnail')
     ); 
   register_post_type('napsa_responds',$args);
   flush_rewrite_rules();
 }; 
 
-// /**
-//  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
-//  *
-//  * @category NAPSA
-//  * @package  Metaboxes
-//  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
-//  * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
-//  */
+/**
+ * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
+ *
+ * @category NAPSA
+ * @package  Metaboxes
+ * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+ * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
+ */
 
-// require_once 'cmb/init.php';
+require_once 'cmb/init.php';
 
-// /**
-//  * Conditionally displays a field when used as a callback in the 'show_on_cb' field parameter
-//  *
-//  * @param  CMB2_Field object $field Field object
-//  *
-//  * @return bool                     True if metabox should show
-//  */
-// function cmb2_hide_if_no_cats( $field ) {
-//   // Don't show this field if not in the cats category
-//   if ( ! has_tag( 'cats', $field->object_id ) ) {
-//     return false;
-//   }
-//   return true;
-// }
+/**
+ * Conditionally displays a field when used as a callback in the 'show_on_cb' field parameter
+ *
+ * @param  CMB2_Field object $field Field object
+ *
+ * @return bool                     True if metabox should show
+ */
+function cmb2_hide_if_no_cats( $field ) {
+  // Don't show this field if not in the cats category
+  if ( ! has_tag( 'cats', $field->object_id ) ) {
+    return false;
+  }
+  return true;
+}
 
 // add_filter( 'cmb2_meta_boxes', 'cmb2_lmc_metaboxes' );
 // /**
@@ -255,12 +255,13 @@ function post_type_napsa_responds()
 //     'priority'      => 'high',
 //     'show_names'    => true, // Show field names on the left
 //     'fields'        => array(
-      
+
 //       array(
-//         'name'    => __( 'Original Publish Date', 'cmb2' ),
-//         'id'      => $prefix . 'pub_date',
-//         'type' => 'text_date',
-//       ),
+//         'name' => __( 'File Attachment', 'cmb2' ),
+//         'desc' => __( 'Upload a File', 'cmb2' ),
+//         'id'   => $prefix . 'pdf_upload',
+//         'type' => 'file',
+//       ), 
 //     )
 //   );
 
@@ -277,13 +278,13 @@ function post_type_napsa_responds()
 //     'fields'        => array(
       
 //       array(
-//         'name'    => __( 'Original Publish Date', 'cmb2' ),
-//         'id'      => $prefix . 'pub_date',
-//         'type' => 'text_date',
-//       ),
+//         'name'    => __( 'Original Publication Name', 'cmb2' ),
+//         'id'      => $prefix . 'news_publication',
+//         'type' => 'text_medium',
+//       ),  
 //       array(
-//         'name'    => __( 'Original Author', 'cmb2' ),
-//         'id'      => $prefix . 'news_author',
+//         'name'    => __( 'Original Publication URL', 'cmb2' ),
+//         'id'      => $prefix . 'news_url',
 //         'type' => 'text_medium',
 //       ),   
 //     )
@@ -302,15 +303,15 @@ function post_type_napsa_responds()
 //     'fields'        => array(
       
 //       array(
-//         'name'    => __( 'Original Publish Date', 'cmb2' ),
-//         'id'      => $prefix . 'member_pub_date',
-//         'type' => 'text_date',
-//       ),
-//       array(
-//         'name'    => __( 'Original Publication', 'cmb2' ),
+//         'name'    => __( 'Original Publication Name', 'cmb2' ),
 //         'id'      => $prefix . 'member_news_publication',
 //         'type' => 'text_medium',
-//       ),   
+//       ),  
+//       array(
+//         'name'    => __( 'Original Publication URL', 'cmb2' ),
+//         'id'      => $prefix . 'member_news_url',
+//         'type' => 'text_medium',
+//       ),
 //     )
 //   );
 

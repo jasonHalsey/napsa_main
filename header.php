@@ -37,7 +37,7 @@
    	 // var templateDir = "<?php get_stylesheet_directory(); ?>";
    	 // var templateDir = "<?php get_stylesheet_directory(); ?>"
    	  var templateDir = "<?php echo get_stylesheet_directory_uri(); ?>"
-   	 
+   	 console.log(templateDir);
 
 	</script>
 

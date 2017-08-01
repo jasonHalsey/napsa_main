@@ -71,10 +71,30 @@ function vb_filter_posts() {
         if ($qry->have_posts()) :
             while ($qry->have_posts()) : $qry->the_post(); ?>
 
+			<?php
+        		if ( get_post_type( get_the_ID() ) == 'member_news' ) { ?>
+				    
+        			<?php 
+                   $postID = get_the_ID(); 
+                   $fields = get_fields($postID);
+                   $op_url = $fields["original_publication_url"];
+                   $op = $fields["original_publication"];
+                ?>
+               
+                <?=$op_url;?>
+
+                <?=$op;?>
                 <article class="loop-item">
-                    <span> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><strong>&nbsp;<?php echo get_the_date('d/m/Y'); ?>:&nbsp;</strong></span>
+                    <span> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><strong>&nbsp;<?php echo get_the_date('m/d/Y'); ?>:&nbsp;</strong></span>
                     <?php the_excerpt(); ?>
                 </article>
+
+
+
+			<?php }
+			?>
+
+
 
             <?php endwhile;
 
@@ -119,15 +139,13 @@ function vb_filter_posts_sc($atts) {
       $taxonomies = array($atts['term']);
     }
 
-      $napsa_sidebar = file_get_contents('inc/napsa_sidebar_content.php');
-
    
     $result = '<div id="container-async" class="sc-ajax-filter closest-container">
                 <div class="content">
                   <div class="status"></div>
                 </div>
                 <section class="filter_sidebar"> 
-                <div class="napsa_sidebar"> </div>';
+                <div class="napsa_sidebar">Blah </div>';
 
     foreach ($taxonomies as $t) {
 
@@ -150,7 +168,6 @@ function vb_filter_posts_sc($atts) {
 
     return $result;
 
-    print_r($napsa_sidebar);
 }
 
 function buildTaxonomyList($terms, $a) {

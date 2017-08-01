@@ -9,7 +9,7 @@ Template Name: Feed Page
   <section class="feed_container">
     <?php if ( have_posts() ) :
 		while ( have_posts() ) : the_post();?>
-
+		
     	<div class="member_news_post">
 			<?php the_content(); ?>
 		</div>
