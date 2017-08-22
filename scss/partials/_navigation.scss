@@ -10,7 +10,17 @@
     top: 0.08em;
     font-weight: 400;
 }
-
+#top-menu .no_drop > a:first-child:after,{
+	content: ' ';
+    width: 1.0em;
+    position: absolute;
+    margin-left: 1.25em;
+    font-family: $headerFont;
+    font-size: 22px;
+    right: -0.35em;
+    top: 0.08em;
+    font-weight: 400;
+}
 .nav li ul{
 	margin-top: -46px;
 	z-index: 99999;
@@ -33,13 +43,19 @@
 
 #top-menu li li {
     margin: 0;
-    padding: 0 10px;
+    padding: 0 14px;
     font-size: 18px;
+    line-height:1.4;
 }
+
 
 #top-menu li.current-menu-item > a{
 	color:$nav_color;
 	text-decoration: underline;
+}
+#top-menu li.current-menu-ancestor > a{
+	color:$nav_color;
+	text-decoration: underline;	
 }
 
 @media only screen and (min-width: 981px) {

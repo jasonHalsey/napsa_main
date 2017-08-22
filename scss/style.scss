@@ -1,5 +1,5 @@
 /*
-Theme Name: NAPSA 
+Theme Name: NAPSA Dev.
 Theme URI: http://www.elegantthemes.com/gallery/divi/
 Description: Child theme for the Divi theme
 Author: Elegant Themes
@@ -21,3 +21,7 @@ Version: 1.0.0
 @import 'partials/home';
 @import 'partials/footer';
 @import 'partials/sub-pages';
+@import 'partials/feed';
+@import 'partials/icon_fonts';
+@import 'partials/sidebar';
+@import 'partials/calendar';

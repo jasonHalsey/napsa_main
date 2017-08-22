@@ -33,6 +33,26 @@
 	<script src="https://use.typekit.net/rrm5chi.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+	<script type="text/javascript">
+   	  var templateDir = "<?php echo get_stylesheet_directory_uri(); ?>";
+	</script>
+
+	<script type="text/javascript">
+   	  var pageSlug = "<?php 
+    global $post;
+    $post_slug=$post->post_name;
+    echo $post_slug;
+	?>";
+	</script>
+
+	<style type="text/css">
+	  .no-fouc {display: none;}
+	</style>
+	<script type="text/javascript">
+	  document.documentElement.className = 'no-fouc';
+	</script>
+
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
