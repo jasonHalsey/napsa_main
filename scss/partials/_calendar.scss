@@ -1,0 +1,22 @@
+li.tribe-events-list-widget-events.tribe-events-category-center-for-great-apes a:link,
+h4.tribe-event-title {
+	a{
+		font-size: 17px;
+		color: $link_blue!important;
+		&:hover{
+			color: $hover_blue;
+		}
+	}
+}
+
+.tribe-events-list-widget .tribe-events-list-widget-events{
+	padding:0 1.0em 1.0em 0;
+}
+
+.tribe-events-list-widget-events{
+	border-bottom: 1px solid $lt_grey;
+	padding-bottom:0.75em;
+	&:last-child{
+		border-bottom: 0px solid transparent;
+	}
+}

@@ -1,8 +1,27 @@
 .et_pb_column_1_4{
+	font-size: 16px;
+	line-height: 1.5;
 	h4{
 		font-family: $headerFont;
 		font-weight: 700;
 		line-height: 1.2;
 		margin: 0 0 0.25em;
+	}
+}
+
+.napsa_sidebar{
+	p{
+		font-size: 16px;
+		line-height:1.5;
+	}
+	a{
+		font-size: 16px;
+		line-height:1.5;
+	}
+}
+.nav-filter{
+	a{
+		font-size: 16px;
+		line-height:1.5;
 	}
 }

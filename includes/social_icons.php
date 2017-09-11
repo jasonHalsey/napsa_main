@@ -36,7 +36,7 @@
 <?php endif; ?>
 
 <li class="et-social-icon et-social-instagram">
-		<a href="https://myspace.com/elegantthemes/‎" class="icon">
+		<a href="https://www.instagram.com/p/BXDnG05DfiC/" class="icon">
 			<span><?php esc_html_e( 'Instagram', 'Divi' ); ?></span>
 		</a>
 	</li>

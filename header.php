@@ -26,6 +26,8 @@
 	<script src="<?php echo esc_url( $template_directory_uri . '/js/html5.js"' ); ?>" type="text/javascript"></script>
 	<![endif]-->
 
+	
+
 	<script type="text/javascript">
 		document.documentElement.className = 'js';
 	</script>
@@ -36,6 +38,11 @@
 	<script type="text/javascript">
    	  var templateDir = "<?php echo get_stylesheet_directory_uri(); ?>";
 	</script>
+
+	<script type="text/javascript">
+   	  var blogInfo = "<?php echo get_site_url(); ?>";
+   	  console.log(blogInfo);
+   	 </script>
 
 	<script type="text/javascript">
    	  var pageSlug = "<?php 

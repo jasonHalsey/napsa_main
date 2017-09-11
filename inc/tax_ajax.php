@@ -84,7 +84,7 @@ function vb_filter_posts() {
 
                 <article class="loop-item">
                     <h3> <?php the_title(); ?></h3>
-                    <?php echo get_the_date('m/d/Y'); ?>&nbsp;|&nbsp;<?=$op;?>
+                    <strong><?php echo get_the_date('m/d/Y'); ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?=$op;?></strong>
                     <?php the_content(); ?>
                     <a href="<?=$op_url;?>" target="_blank">Read More</a>
                 </article>
@@ -105,10 +105,10 @@ function vb_filter_posts() {
                 ?>
                 <article class="loop-item">
                     <h3> <?php the_title(); ?></h3>
-                    <?php echo get_the_date('m/d/Y'); ?>&nbsp;|&nbsp;<?=$op;?>
+                    <strong><?php echo get_the_date('m/d/Y'); ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?=$op;?></strong>
                     <?php the_content(); ?>
                     <?php if (!empty($op_url)) { ?>
-                    <a href="<?=$op_url;?>">Read More</a>
+                    <a href="<?=$op_url;?>" target="_blank">Read More</a>
                     <?php } ?>
                 </article>
 
@@ -127,7 +127,7 @@ function vb_filter_posts() {
                 ?>
                 <article class="loop-item">
                     <h3> <?php the_title(); ?></h3>
-                    <?php echo get_the_date('m/d/Y'); ?>
+                    <strong><?php echo get_the_date('m/d/Y'); ?></strong>
                     <?php the_content(); ?>
                     <a href="<?=$file_url;?>" target="_blank">Read Our Letter</a>
                     <?php if (!empty($file_url_2)) { ?>

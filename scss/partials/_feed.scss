@@ -63,8 +63,8 @@ article.loop-item{
 	a{
 		padding: 0.5em 0.25em;
 		text-align: center;
-		margin: 1.0em 0;
-		width:100%;
+		margin: 1.0em auto;
+		width:80%;
 		display: block;
 		outline: 1px solid #000;
 		transition: all .25s ease-in-out;
@@ -99,41 +99,3 @@ ul.nav-filter{
 		}
 	}
 }
-
-.et_pb_filterable_portfolio .et_pb_portfolio_filters {
-    clear: both;
-    margin: 0 0 40px 0;
-    display: none!important;
-}
-.et_pb_portfolio_item{
-	margin-bottom: 1.0em;
-	a{
-		font-size:18px;
-		margin-top: 0;
-		line-height: 1;
-		&:hover{
-			color: $orange!important;
-		}
-	}
-	p.post-meta{
-		color:#000;
-		margin-top: 0;
-		line-height: 1;
-	}
-}
-
-.et_pb_bg_layout_light .et_pb_portfolio_item .post-meta{
-	color:#000;
-}
-
-/* NAPSA News Sidebar Feed. */
-.napsa_news_sidebar{
-	.et_pb_portfolio_item{
-		margin-bottom: 2.0em;
-		h2{
-   			margin: 0;
-		}
-	}
-}
-
-

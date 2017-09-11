@@ -1,6 +1,7 @@
 jQuery(document).ready(function() {
 
 	moveViewAll();
+	feedURL();
 
 	jQuery('p.post-meta span.published').each(function() {
 		jQuery(this).detach();
@@ -20,8 +21,15 @@ jQuery(document).ready(function() {
 
 });
 
+// Create A "View All" Button for AJAX Feed Filtering
 function moveViewAll() {
   var view_all = jQuery('#container-async > section > ul > li > a:contains("View All")');
   jQuery(view_all).detach();
   jQuery('.view_btn_contain').prepend(view_all);
+}
+
+//Redirect NAPSA in The News Feed link to direct to NAPSA in The News Overview Page
+function feedURL() {
+	var target_link = jQuery('.et_pb_portfolio_item a');
+	jQuery(target_link).attr("href", '' + blogInfo + '/napsa-in-the-news/');
 }

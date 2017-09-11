@@ -1,58 +1,58 @@
 body.home{
-	.hero_image{
-		.et_pb_slide{
-			min-height: 69vh;
-			padding:0 0;
-		}
-		.et_pb_slide_content {
-		    color: $white;
-		    font-size: 18px;
-		    font-weight: 400;
-		    padding:0.5em 0.5em;
-		    background-color: $dk_green;
-		    position: absolute;
-		    left: 0;
-		    right: 0;
-		    bottom: -1px;
-		    p{
-		    	margin:0 0 0.4em 0;
-		    	color:$white;
-		    }
-		}
-	}
-	
-	.et_pb_slide_description{
-		padding: 16% 0% 4% 0%;
-		h2.et_pb_slide_title{
-			font-size: 60px;
-			text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
-			span{
-				font-weight: 700;
-			}
-		}
-	}
-	.et_pb_slides .et_pb_slider_container_inner{
-		display: table-cell;
-		vertical-align:bottom;
-	}
-	.et_pb_bg_layout_dark h1{
-		font-size: 60px;
-		font-family: $headerFont;
-	}
-	.et_pb_slider .et_pb_container {
-	    position: relative;
-	    z-index: 2;
-	    width: 100%;
-	    max-width: 100%;
-	    margin: 0 auto;
-	}
-	
+
 	.primate_slider .et_pb_slide{ 
         max-height: 300px; 
     }
     .primate_slide_container{
     	padding: 54px 0 0;
+        .et_pb_slide_content{
+            display: none;
+        }
     }
+
+    .et_pb_slide {
+        padding: 0;
+    }
+    .et_pb_slider .et_pb_container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .et_pb_slide_content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        width:100%;
+        color: $white;
+        font-size: 18px;
+        font-weight: 400;
+        padding:0.5em 0.5em;
+        background-color: $dk_green;
+        @media only screen and (max-width: 981px) {
+            font-size: 14px;
+            padding:0.25em 0.25em;
+        }
+        @media only screen and (max-width: 400px) {
+            display:none;
+        }
+    }
+
+    h2.et_pb_slide_title{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 10%;
+        width:100%;
+        font-size: 60px;
+        text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+        span{
+         font-weight: 700;
+        }
+    }
+
     .mission_block{
     	padding: 0;
     }

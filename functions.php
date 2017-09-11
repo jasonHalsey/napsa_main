@@ -12,7 +12,7 @@
    // add_filter('excerpt_more', 'new_excerpt_more');
 
 
-teccc_reposition_legend('.event_legend_sb');
+// teccc_reposition_legend('.event_legend_sb');
 
 
 /*  Add Child-Theme Capabilities
@@ -29,6 +29,15 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+/*  Add SVG Upload Support To Media Library
+/* ------------------------------------ */ 
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 
 /*  Add Custom JS
 /* ------------------------------------ */ 

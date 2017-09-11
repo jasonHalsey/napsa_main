@@ -2,7 +2,6 @@ body{
 	font-family: $bodyFont;
 	font-size: 18px;
 	color:$black;
-	line-height:1.3;
 }
 
 h2{
@@ -16,23 +15,10 @@ h3{
 	font-weight: 700;
 	margin: 0 0 0.25em;
 }
-h4{
-	font-family: $headerFont;
-	font-weight: 700;
-	margin: 0 0 0.25em;
-}
-h5{
-	font-family: $headerFont;
-	font-weight: 700;
-	margin: 0 0 0.25em;
-}
 p{
 	color:$black;
 	padding-bottom: 0.75em;
 
-}
-a:focus{
-	outline:none;
 }
 .et_pb_row{
 	max-width: 1200px;
@@ -45,16 +31,6 @@ ul,.entry-content ul{
 	ul,.entry-content ul{
 		padding: 5px 0 1.5em 2.3em;
 	}
-}
-#main-content{
-	ul{
-		li{
-			margin-bottom: 1.0em;
-		}
-	}
-}
-.author-info{
-	font-size: 16px;
 }
 .monkey_icon{
 	&:before{
@@ -70,8 +46,6 @@ ul,.entry-content ul{
 	}
 	padding:27px 0;
 }
-.et-social-instagram a.icon:before { content: '\e09a'; }
-
 
 body #page-container .et_pb_button_0 {
 	font-size: 18px!important;
