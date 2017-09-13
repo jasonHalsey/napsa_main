@@ -79,3 +79,8 @@
     	}
     }
 }
+.et_header_style_left .mobile_menu_bar{
+	@media only screen and (max-width: 787px) {
+        padding-bottom:48px;
+    }
+}

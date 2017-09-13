@@ -319,7 +319,7 @@ ul, .entry-content ul {
   content: url(images/monkey_icon.png);
   position: absolute;
   display: block;
-  z-index: 99999;
+  z-index: 8888;
   top: 0;
   left: 50%;
   width: 101px;
@@ -581,6 +581,12 @@ header {
 .et_mobile_menu li a {
   background-color: rgba(0, 0, 0, 0.03);
   font-weight: bold;
+}
+
+@media only screen and (max-width: 787px) {
+  .et_header_style_left .mobile_menu_bar {
+    padding-bottom: 48px;
+  }
 }
 
 body.home .primate_slider .et_pb_slide {
