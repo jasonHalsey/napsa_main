@@ -1,19 +1,5 @@
 <?php
 
-/*  Remove Admin Bar
-/* ------------------------------------ */ 
-	// add_filter('show_admin_bar', '__return_false');
-
-// Changing excerpt more
-   // function new_excerpt_more($more) {
-   // global $post;
-   // return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
-   // }
-   // add_filter('excerpt_more', 'new_excerpt_more');
-
-
-// teccc_reposition_legend('.event_legend_sb');
-
 
 /*  Add Child-Theme Capabilities
 /* ------------------------------------ */ 
