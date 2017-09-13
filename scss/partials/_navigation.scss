@@ -21,6 +21,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f7a36', endColorstr='#adbb5a',GradientType=0 ); /* IE6-9 */
 	border-top: 0px solid #6F7A36;
 	li{
+
 		a{
 			color:$white!important;
 			font-size: 18px;
@@ -35,6 +36,7 @@
     margin: 0;
     padding: 0 10px;
     font-size: 18px;
+    line-height: 1.2;
 }
 
 #top-menu li.current-menu-item > a{

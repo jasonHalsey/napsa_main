@@ -47,7 +47,7 @@ body.home{
         bottom: 10%;
         width:100%;
         font-size: 60px;
-        text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         span{
          font-weight: 700;
         }
@@ -81,8 +81,13 @@ body.home{
     		padding-bottom:0;
     	}
     	a{
-    		color:$link_blue;
-    		font-weight:700;
+    		color:$main_link;
+    		font-weight:normal;
+            font-size: 18px;
+            line-height: 0.7;
+            &:hover{
+                color:$main_link_h;
+            }
     	}
     	.et_pb_row{
     		padding:0 0 27px!important;
@@ -90,6 +95,9 @@ body.home{
     	
 
 
+    }
+    .et_pb_portfolio_filters{
+        display:none;
     }
     .et_pb_posts{
     	h2{
@@ -100,7 +108,7 @@ body.home{
     			font-weight: 700;
     		}
     		a{
-    			color:$link_blue;
+    			color:$main_link;
     			margin-left: 0.5em;
     			font-weight:500;
     		}

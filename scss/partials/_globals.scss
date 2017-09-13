@@ -20,6 +20,23 @@ p{
 	padding-bottom: 0.75em;
 
 }
+a{
+	color:$main_link;
+	&:hover{
+		color:$main_link_h;
+	}
+	&:focus{
+		outline:none;
+		border:none;
+	}
+	&:active{
+		outline:none;
+		border:none;
+	}
+}
+.et_pb_portfolio_item{
+	margin-bottom: 1.0em;
+}
 .et_pb_row{
 	max-width: 1200px;
 }

@@ -2,9 +2,9 @@ li.tribe-events-list-widget-events.tribe-events-category-center-for-great-apes a
 h4.tribe-event-title {
 	a{
 		font-size: 17px;
-		color: $link_blue!important;
+		color: $main_link!important;
 		&:hover{
-			color: $hover_blue;
+			color: $main_link_h;
 		}
 	}
 }
@@ -19,4 +19,8 @@ h4.tribe-event-title {
 	&:last-child{
 		border-bottom: 0px solid transparent;
 	}
+}
+h4.widgettitle{
+	color:$orange!important;
+	font-weight: 700;
 }
