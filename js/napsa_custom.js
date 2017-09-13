@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+	console.log(templateDir);
 
 	moveViewAll();
 	feedURL();
@@ -16,6 +17,7 @@ jQuery(document).ready(function() {
 	    	return html.replace(/^\s*([^\s]+)(\s|$)/, '<span>$1 </span>');
 	    })
 	});
+<<<<<<< HEAD
 
 	jQuery('.no-fouc').removeClass('no-fouc');
 
@@ -33,3 +35,7 @@ function feedURL() {
 	var target_link = jQuery('.et_pb_portfolio_item a');
 	jQuery(target_link).attr("href", '' + blogInfo + '/napsa-in-the-news/');
 }
+=======
+
+});
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5

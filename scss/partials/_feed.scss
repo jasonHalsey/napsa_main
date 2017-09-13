@@ -13,11 +13,9 @@
 		padding:38px 0 0;
 	}
 }
-
 .monkey_icon_span{
-	background-color: blue;
+	background-color: #fff;
 }
-
 
 .single_feed_container{
 	@include clearfix;
@@ -31,6 +29,7 @@
 #container-async{
 	div.content{
 		@include grid-column(9);
+
 		padding-right:2.0em;
 	}
 	section.filter_sidebar{
@@ -100,5 +99,8 @@ ul.nav-filter{
 			border: none;
 			outline: none;
 		}
+	}
+	section.filter_sidebar{
+		@include grid-column(3);
 	}
 }

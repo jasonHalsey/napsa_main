@@ -36,6 +36,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 	<script type="text/javascript">
+<<<<<<< HEAD
    	  var templateDir = "<?php echo get_stylesheet_directory_uri(); ?>";
 	</script>
 
@@ -60,6 +61,15 @@
 	</script>
 
 
+=======
+   	 // var templateDir = "<?php get_stylesheet_directory(); ?>";
+   	 // var templateDir = "<?php get_stylesheet_directory(); ?>"
+   	  var templateDir = "<?php echo get_stylesheet_directory_uri(); ?>"
+   	 console.log(templateDir);
+
+	</script>
+
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

@@ -74,11 +74,16 @@ function vb_filter_posts() {
 			<?php
         		if ( get_post_type( get_the_ID() ) == 'member_news' ) { ?>
 				    
+<<<<<<< HEAD
         		<?php 
+=======
+        			<?php 
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
                    $postID = get_the_ID(); 
                    $fields = get_fields($postID);
                    $op_url = $fields["original_publication_url"];
                    $op = $fields["original_publication"];
+<<<<<<< HEAD
                    $hd_post_type = "member_news";
                 ?>
 
@@ -136,6 +141,21 @@ function vb_filter_posts() {
                 </article>
 
 				<?php }
+=======
+                ?>
+               
+                <?=$op_url;?>
+
+                <?=$op;?>
+                <article class="loop-item">
+                    <span> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><strong>&nbsp;<?php echo get_the_date('m/d/Y'); ?>:&nbsp;</strong></span>
+                    <?php the_excerpt(); ?>
+                </article>
+
+
+
+			<?php }
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
 			?>
 
 
@@ -189,7 +209,11 @@ function vb_filter_posts_sc($atts) {
                   <div class="status"></div>
                 </div>
                 <section class="filter_sidebar"> 
+<<<<<<< HEAD
                 <div class="napsa_sidebar">Loading Content... </div>';
+=======
+                <div class="napsa_sidebar">Blah </div>';
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
 
     foreach ($taxonomies as $t) {
 
@@ -208,7 +232,11 @@ function vb_filter_posts_sc($atts) {
          $result.= buildTaxonomyList($terms, $a);
     } 
 
+<<<<<<< HEAD
     $result.='<div class="view_btn_contain"></div></section></div>';
+=======
+    $result.='</section></div>';
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
 
     return $result;
 

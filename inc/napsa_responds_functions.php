@@ -4,7 +4,11 @@
 function responds_category_taxonomy() {
 
   $labels = array(
+<<<<<<< HEAD
     'name'                       => _x( 'SORT BY SUBJECT', 'Sanctuary General Name', 'text_domain' ),
+=======
+    'name'                       => _x( 'Category', 'Sanctuary General Name', 'text_domain' ),
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
     'singular_name'              => _x( 'Category', 'Sanctuary Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Category', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),
@@ -43,7 +47,11 @@ add_action( 'init', 'responds_category_taxonomy', 0 );
 function responds_date_taxonomy() {
 
   $labels = array(
+<<<<<<< HEAD
     'name'                       => _x( 'ARCHIVE BY YEAR', 'Date General Name', 'text_domain' ),
+=======
+    'name'                       => _x( 'Published Date', 'Date General Name', 'text_domain' ),
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
     'singular_name'              => _x( 'Published Date', 'Date Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Published Date', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),
@@ -83,7 +91,11 @@ add_action( 'init', 'responds_date_taxonomy', 0 );
 function responds_tag_taxonomy() {
 
   $labels = array(
+<<<<<<< HEAD
     'name'                       => _x( 'TAGS', 'Date General Name', 'text_domain' ),
+=======
+    'name'                       => _x( 'Tags', 'Date General Name', 'text_domain' ),
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
     'singular_name'              => _x( 'Tag', 'Date Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Tag', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),

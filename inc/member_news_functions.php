@@ -4,7 +4,11 @@
 function sanctuaries_taxonomy() {
 
   $labels = array(
+<<<<<<< HEAD
     'name'                       => _x( 'SORT BY MEMBER SANCTUARIES', 'Sanctuary General Name', 'text_domain' ),
+=======
+    'name'                       => _x( 'Sort News By Member', 'Sanctuary General Name', 'text_domain' ),
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
     'singular_name'              => _x( 'Sanctuary', 'Sanctuary Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Sanctuary', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),
@@ -43,7 +47,11 @@ add_action( 'init', 'sanctuaries_taxonomy', 0 );
 function member_date_taxonomy() {
 
   $labels = array(
+<<<<<<< HEAD
     'name'                       => _x( 'ARCHIVE BY YEAR', 'Date General Name', 'text_domain' ),
+=======
+    'name'                       => _x( 'News Archives', 'Date General Name', 'text_domain' ),
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
     'singular_name'              => _x( 'Published Date', 'Date Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Published Date', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),
@@ -83,7 +91,11 @@ add_action( 'init', 'member_date_taxonomy', 0 );
 function member_tag_taxonomy() {
 
   $labels = array(
+<<<<<<< HEAD
     'name'                       => _x( 'TAGS', 'Date General Name', 'text_domain' ),
+=======
+    'name'                       => _x( 'Tags', 'Date General Name', 'text_domain' ),
+>>>>>>> 2fcf449e157fb3af779331163f5382f484779ec5
     'singular_name'              => _x( 'Tag', 'Date Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Tag', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),

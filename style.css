@@ -276,6 +276,20 @@ h3 {
   margin: 0 0 0.25em;
 }
 
+h4 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  margin: 0 0 0.25em;
+  color: #818c3c;
+}
+
+h5 {
+  font-family: "myriad-pro", sans-serif;
+  font-weight: 700;
+  margin: 0 0 0.25em;
+  color: #666666;
+}
+
 p {
   color: #000000;
   padding-bottom: 0.75em;
@@ -817,7 +831,7 @@ footer .copyright {
 }
 
 .monkey_icon_span {
-  background-color: blue;
+  background-color: #fff;
 }
 
 .single_feed_container {
@@ -899,6 +913,11 @@ ul.nav-filter li.active a {
 ul.nav-filter li.focus a {
   border: none;
   outline: none;
+}
+ul.nav-filter section.filter_sidebar {
+  width: calc(25% - 25px);
+  float: left;
+  margin-left: 20px;
 }
 
 li.tribe-events-list-widget-events.tribe-events-category-center-for-great-apes a:link a,
