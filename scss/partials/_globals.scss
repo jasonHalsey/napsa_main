@@ -66,7 +66,7 @@ ul,.entry-content ul{
 		content: url(images/monkey_icon.png);
 		position: absolute;
 		display: block;
-		z-index: 99999;
+		z-index: 8888;
 		top: 0;
 		left: 50%;
 		width: 101px;
@@ -78,4 +78,36 @@ ul,.entry-content ul{
 
 body #page-container .et_pb_button_0 {
 	font-size: 18px!important;
+}
+.et_pb_slide_content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    width:100%;
+    color: $white;
+    font-size: 18px;
+    font-weight: 400;
+    padding:0.5em 0.5em;
+    background-color: $dk_green;
+    @media only screen and (max-width: 981px) {
+        font-size: 14px;
+        padding:0.25em 0.25em;
+    }
+    @media only screen and (max-width: 767px) {
+        display:none;
+    }
+     @media only screen and (max-width: 767px) {
+        display:none;
+    }
+}
+
+h2.et_pb_slide_title{
+    @media only screen and (max-width: 767px) {
+        font-size: 33px!important;
+    }
+}
+.et_pb_module .et_pb_button:hover, .et_pb_button:hover {
+    padding: 0.65em 2em 0.60em 1em;
+    border: 2px solid transparent;
 }

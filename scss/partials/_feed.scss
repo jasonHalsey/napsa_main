@@ -104,3 +104,28 @@ ul.nav-filter{
 		@include grid-column(3);
 	}
 }
+
+
+.et_pb_portfolio_filter, .et_pb_portfolio_filter_all{
+	display:none;
+}
+.et_pb_filterable_portfolio .et_pb_portfolio_filters {
+    clear: both;
+    margin: 0 0 5px 0;
+}
+.et_pb_portfolio_items{
+	h2{
+		margin:0;
+		padding-bottom: 0;
+	}
+	a{
+		color:$main_link;
+		font-weight:normal;
+        font-size: 18px;
+        line-height: 0.7;
+        &:hover{
+            color:$main_link_h;
+        }
+	}
+}
+
