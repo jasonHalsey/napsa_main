@@ -1,4 +1,16 @@
 body.home{
+    .hero_image{
+        @media only screen and ( min-width:981px ) {
+        /* Set the slider height */
+            .et_pb_slider, .et_pb_slider .et_pb_container { 
+                height: 800px !important; 
+            }
+            .et_pb_slider, .et_pb_slider .et_pb_slide { 
+                max-height: 800px; 
+            }
+            
+        }
+    }
 
 	.primate_slider .et_pb_slide{ 
         max-height: 300px; 
@@ -39,6 +51,18 @@ body.home{
             display:none;
         }
     }
+
+
+    .et_pb_slider_container_inner{
+        height:100%;
+        width:100%;
+    }
+    .et_pb_slide_description{
+        height:100%;
+    }
+
+
+
 
     h2.et_pb_slide_title{
         position: absolute;

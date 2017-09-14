@@ -4,7 +4,7 @@
 function napsa_category_taxonomy() {
 
   $labels = array(
-    'name'                       => _x( 'Categories', 'Sanctuary General Name', 'text_domain' ),
+    'name'                       => _x( 'Sort By Subject', 'Sanctuary General Name', 'text_domain' ),
     'singular_name'              => _x( 'Category', 'Sanctuary Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Categories', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),
@@ -43,7 +43,7 @@ add_action( 'init', 'napsa_category_taxonomy', 0 );
 function napsa_date_taxonomy() {
 
   $labels = array(
-    'name'                       => _x( 'News Archives', 'Date General Name', 'text_domain' ),
+    'name'                       => _x( 'Archive By Year', 'Date General Name', 'text_domain' ),
     'singular_name'              => _x( 'Published Date', 'Date Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'Published Date', 'text_domain' ),
     'all_items'                  => __( 'All Items', 'text_domain' ),

@@ -1,6 +1,9 @@
 .et_pb_column_1_4{
 	font-size: 16px;
 	line-height: 1.5;
+	h2{
+		a{font-size: 16px;}
+	}
 	h4{
 		font-family: $headerFont;
 		font-weight: 700;
@@ -20,8 +23,9 @@
 	}
 }
 .nav-filter{
+	li{margin-bottom: 1.0em;}
 	a{
 		font-size: 16px;
-		line-height:1.5;
+		line-height:1.2;
 	}
 }
