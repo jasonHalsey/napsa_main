@@ -80,7 +80,19 @@
     }
 }
 .et_header_style_left .mobile_menu_bar{
+	@media only screen and (max-width: 1025px) {
+        padding-bottom:78px;
+    }
 	@media only screen and (max-width: 787px) {
         padding-bottom:48px;
     }
+}
+
+
+/* Setting the breakpoint of the mobile menu */
+@media only screen and ( max-width: 1025px ) {
+	#top-menu-nav, #top-menu {display: none;}
+	#et_top_search {display: none;}
+	#et_mobile_nav_menu {display: block;}
+	#et-secondary-menu{display:none;}
 }
