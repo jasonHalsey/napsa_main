@@ -79,21 +79,23 @@ header{
 		color:$nav_color;
 		margin-right: 2.0em;
 		&:last-child{
-			margin-right: 1.0em;
+			margin-right: 0em;
 		}
 		> a{
 			&:hover{
 				text-decoration: underline;
 			}
-			&:after{
-				content: '>';
-				width: 1.0em;
-				position: absolute;
-				margin-left: 0.25em;
-			}
+		}
+		@media all and (max-width: 1400px) and (min-width: 1051px) {
+			margin-right: 0.75em;
+			padding-right: 10px;
+		}
+		@media all and (max-width: 1050px) and (min-width: 1025px) {
+			margin-right: 0.5em;
 		}
 	}
 }
+
 
 @media only screen and (min-width: 981px){
 	.et_header_style_left #et-top-navigation, .et_header_style_split #et-top-navigation {

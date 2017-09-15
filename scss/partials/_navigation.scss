@@ -1,14 +1,12 @@
 
 #top-menu .menu-item-has-children > a:first-child:after, #et-secondary-nav .menu-item-has-children > a:first-child:after {
-	content: '>';
-    width: 1.0em;
     position: absolute;
-    margin-left: 1.25em;
+    top: 0.08em;
+    right: 0;
     font-family: $headerFont;
     font-size: 22px;
-    right: -0.35em;
-    top: 0.08em;
-    font-weight: 400;
+    font-weight: 800;
+    content: '>';
 }
 
 .nav li ul{

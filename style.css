@@ -467,16 +467,21 @@ header {
   margin-right: 2.0em;
 }
 #top-menu > li:last-child {
-  margin-right: 1.0em;
+  margin-right: 0em;
 }
 #top-menu > li > a:hover {
   text-decoration: underline;
 }
-#top-menu > li > a:after {
-  content: '>';
-  width: 1.0em;
-  position: absolute;
-  margin-left: 0.25em;
+@media all and (max-width: 1400px) and (min-width: 1051px) {
+  #top-menu > li {
+    margin-right: 0.75em;
+    padding-right: 10px;
+  }
+}
+@media all and (max-width: 1050px) and (min-width: 1025px) {
+  #top-menu > li {
+    margin-right: 0.5em;
+  }
 }
 
 @media only screen and (min-width: 981px) {
@@ -502,15 +507,13 @@ header {
 }
 
 #top-menu .menu-item-has-children > a:first-child:after, #et-secondary-nav .menu-item-has-children > a:first-child:after {
-  content: '>';
-  width: 1.0em;
   position: absolute;
-  margin-left: 1.25em;
+  top: 0.08em;
+  right: 0;
   font-family: "proxima-nova", sans-serif;
   font-size: 22px;
-  right: -0.35em;
-  top: 0.08em;
-  font-weight: 400;
+  font-weight: 800;
+  content: '>';
 }
 
 .nav li ul {
@@ -616,17 +619,6 @@ header {
     display: none;
   }
 }
-@media only screen and (min-width: 981px) {
-  body.home .hero_image {
-    /* Set the slider height */
-  }
-  body.home .hero_image .et_pb_slider, body.home .hero_image .et_pb_slider .et_pb_container {
-    height: 800px !important;
-  }
-  body.home .hero_image .et_pb_slider, body.home .hero_image .et_pb_slider .et_pb_slide {
-    max-height: 800px;
-  }
-}
 body.home .primate_slider .et_pb_slide {
   max-height: 300px;
 }
@@ -645,6 +637,11 @@ body.home .et_pb_slider .et_pb_container {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
+}
+@media only screen and (min-width: 981px) {
+  body.home .et_pb_slider .et_pb_container {
+    height: 800px !important;
+  }
 }
 body.home .et_pb_slide_content {
   position: absolute;
@@ -1078,4 +1075,39 @@ h4.tribe-event-title a:hover {
 h4.widgettitle {
   color: #e76735 !important;
   font-weight: 700;
+}
+
+.et_pb_column_1_4 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.et_pb_column_1_4 h2 a {
+  font-size: 16px;
+}
+.et_pb_column_1_4 h4 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.25em;
+}
+.et_pb_column_1_4 p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.napsa_sidebar p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.napsa_sidebar a {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.nav-filter li {
+  margin-bottom: 1.0em;
+}
+.nav-filter a {
+  font-size: 16px;
+  line-height: 1.2;
 }
