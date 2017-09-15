@@ -274,6 +274,14 @@ h3 {
   font-family: "proxima-nova", sans-serif;
   font-weight: 700;
   margin: 0 0 0.25em;
+  font-size: 1.45em;
+}
+
+h4 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  margin: 0 0 0.25em;
+  font-size: 1.25em;
 }
 
 p {
@@ -296,6 +304,10 @@ a:active {
   border: none;
 }
 
+.et_pb_text_inner li {
+  margin-bottom: 1.0em;
+}
+
 .et_pb_portfolio_item {
   margin-bottom: 1.0em;
 }
@@ -309,7 +321,7 @@ ul, .entry-content ul {
 }
 
 .et_pb_text ul, .et_pb_text .entry-content ul {
-  padding: 5px 0 1.5em 2.3em;
+  padding: 5px 0 20px 2.3em;
 }
 
 .monkey_icon {
