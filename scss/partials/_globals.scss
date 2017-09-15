@@ -95,9 +95,13 @@ h2.et_pb_slide_title{
         font-size: 33px!important;
     }
 }
+.et_pb_module .et_pb_button, .et_pb_button {
+    background-color: $orange;
+}
 .et_pb_module .et_pb_button:hover, .et_pb_button:hover {
     padding: 0.65em 2em 0.60em 1em;
     border: 2px solid transparent;
+    background-color: $orange;
 }
 
 div.author-info{

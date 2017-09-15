@@ -366,9 +366,14 @@ body #page-container .et_pb_button_0 {
   }
 }
 
+.et_pb_module .et_pb_button, .et_pb_button {
+  background-color: #e76735;
+}
+
 .et_pb_module .et_pb_button:hover, .et_pb_button:hover {
   padding: 0.65em 2em 0.60em 1em;
   border: 2px solid transparent;
+  background-color: #e76735;
 }
 
 div.author-info {
