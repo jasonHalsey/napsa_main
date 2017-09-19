@@ -118,3 +118,9 @@ header{
 	position: relative;
 	padding-top:1.5em;
 }
+
+@media (max-width: 500px){
+	.et_header_style_left #logo, .et_header_style_split #logo {
+	    max-width: 90%;
+	}
+}
