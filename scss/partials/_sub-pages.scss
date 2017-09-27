@@ -38,8 +38,12 @@
 			}
 		}
 		.et_pb_slides .et_pb_slider_container_inner{
-			display: table-cell;
-			vertical-align:bottom;
+			display:block;
+			position: absolute;
+			bottom:0;
+			width:100%;
+			// display: table-cell;
+			// vertical-align:bottom;
 		}
 		.et_pb_bg_layout_dark h1{
 			font-size: 60px;

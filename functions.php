@@ -25,15 +25,29 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 
+/*  Add Async JS
+/* ------------------------------------ */ 
+function hd_async_scripts($url)
+{
+    if ( strpos( $url, '#asyncload') === false )
+        return $url;
+    else if ( is_admin() )
+        return str_replace( '#asyncload', '', $url );
+    else
+  return str_replace( '#asyncload', '', $url )."' async='async"; 
+    }
+add_filter( 'clean_url', 'hd_async_scripts', 11, 1 );
+
+
 /*  Add Custom JS
 /* ------------------------------------ */ 
 function wpb_adding_scripts() {
 
   $vars = "value";
 
-  wp_register_script('app', get_stylesheet_directory_uri() . '/js/napsa_custom.js');
+  wp_register_script('app', get_stylesheet_directory_uri() . '/js/napsa_custom.js#asyncload');
 
-  wp_register_script('post_filter', get_stylesheet_directory_uri() . '/js/post_filter.js');
+  wp_register_script('post_filter', get_stylesheet_directory_uri() . '/js/post_filter.js#asyncload');
 
   wp_enqueue_style( 'style', get_stylesheet_uri() );
 

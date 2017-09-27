@@ -41,7 +41,6 @@
 
 	<script type="text/javascript">
    	  var blogInfo = "<?php echo get_site_url(); ?>";
-   	  console.log(blogInfo);
    	 </script>
 
 	<script type="text/javascript">
@@ -91,12 +90,6 @@
 		<div id="top-header"<?php echo $et_top_info_defined ? '' : 'style="display: none;"'; ?>>
 			<div class="container clearfix">
 			
-
-
-
-
-
-
 
 			<?php if ( $et_contact_info_defined ) : ?>
 
@@ -302,16 +295,6 @@
 			</div>
 		</div>
 	<?php endif; // true ==== $et_slide_header ?>
-
-
-
-
-
-
-
-
-
-
 
 
 
