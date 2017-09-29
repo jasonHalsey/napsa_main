@@ -33,3 +33,11 @@
 		line-height:1.2;
 	}
 }
+.member_sanc_sidebar{
+	@media only screen and (max-width: 767px) {
+		img{
+			width:100%;
+			height:auto;
+		}
+	}
+}

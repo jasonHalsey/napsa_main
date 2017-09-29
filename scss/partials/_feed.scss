@@ -11,6 +11,9 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		padding:38px 0 0;
+		@media only screen and (max-width: 767px) {
+			padding: 38px 15px 0;
+		}
 	}
 }
 
@@ -32,6 +35,10 @@
 	div.content{
 		@include grid-column(9);
 		padding-right:2.0em;
+		@media only screen and (max-width: 767px) {
+	        @include grid-column(12);
+			padding-right:0;
+	    }
 	}
 	section.filter_sidebar{
 		font-size: 16px;
@@ -55,6 +62,9 @@
 				a{line-height:1.2;}
 			}
 		}
+		@media only screen and (max-width: 767px) {
+	        display:none;
+	    }
 	}
 }
 

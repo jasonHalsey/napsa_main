@@ -1,4 +1,4 @@
-<h2>Primates Retirement</h2>
+<h2>Being the Voice</h2>
 	<div id="monkey_icon_drop"></div><p>The expertise of NAPSA is sought by the media in stories not just about primate sanctuaries, but about exotic pets, research, primates in entertainment, and primate welfare as a whole.</p>
 	<h3>MEDIA INQUIRIES</h3>
 	<p><strong>Erika Fleury</strong><br />
