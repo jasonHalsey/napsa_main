@@ -24,3 +24,8 @@ h4.widgettitle{
 	color:$orange!important;
 	font-weight: 700;
 }
+
+#tribe-events-bar * {
+    box-sizing: border-box;
+    display: none;
+}

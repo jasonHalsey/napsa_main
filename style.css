@@ -567,6 +567,9 @@ header {
   font-size: 18px;
   line-height: 1.2;
 }
+#top-menu li li a {
+  width: 100%;
+}
 
 #top-menu li.current-menu-item > a {
   color: #5f5046;
@@ -1137,6 +1140,11 @@ h4.tribe-event-title a:hover {
 h4.widgettitle {
   color: #e76735 !important;
   font-weight: 700;
+}
+
+#tribe-events-bar * {
+  box-sizing: border-box;
+  display: none;
 }
 
 .et_pb_column_1_4 {

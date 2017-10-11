@@ -1,7 +1,10 @@
+
 (function($) {
 	$doc = jQuery(document);
 
 	$doc.ready( function() {
+
+		console.log('Loaded Again')
 		/**
 		 * Retrieve posts
 		 */
@@ -54,8 +57,8 @@
 
 	            	$status.text('Posts found: ' + msg);
 	            	
-	            	/*console.log(data);
-	            	console.log(textStatus);*/
+	            	console.log(data);
+	            	console.log(textStatus);
 	            }
 	        });
 		}
