@@ -1,11 +1,11 @@
 
 	.sub_hero_image{
 		.et_pb_slider{
-			min-height: 69vh;
+			// min-height: 69vh;
 			padding:0 0;
 		}
 		.et_pb_slide{
-			min-height: 69vh;
+			// min-height: 69vh;
 			padding:0 0;
 		}
 		.et_pb_slides{
@@ -49,13 +49,36 @@
 			font-size: 60px;
 			font-family: $headerFont;
 		}
+		// .et_pb_slider .et_pb_container {
+		//     position: relative;
+		//     z-index: 2;
+		//     width: 100%;
+		//     max-width: 100%;
+		//     margin: 0 auto;
+		// }
+
+
+
 		.et_pb_slider .et_pb_container {
-		    position: relative;
-		    z-index: 2;
-		    width: 100%;
-		    max-width: 100%;
-		    margin: 0 auto;
-		}
+	        position: relative;
+	        z-index: 2;
+	        width: 100%;
+	        max-width: 100%;
+	        margin: 0 auto;
+	        @media all and (max-width: 1680px) and (min-width: 980px) {
+	            height: 400px !important;
+	        }
+	        @media only screen and ( min-width:1681px ) {
+	            height: 800px !important;
+	        }
+	    }
+
+
+
+
+
+
+		
 	}
 
 

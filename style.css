@@ -909,11 +909,9 @@ footer .copyright {
 }
 
 .sub_hero_image .et_pb_slider {
-  min-height: 69vh;
   padding: 0 0;
 }
 .sub_hero_image .et_pb_slide {
-  min-height: 69vh;
   padding: 0 0;
 }
 .sub_hero_image .et_pb_slides {
@@ -958,6 +956,16 @@ footer .copyright {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
+}
+@media all and (max-width: 1680px) and (min-width: 980px) {
+  .sub_hero_image .et_pb_slider .et_pb_container {
+    height: 400px !important;
+  }
+}
+@media only screen and (min-width: 1681px) {
+  .sub_hero_image .et_pb_slider .et_pb_container {
+    height: 800px !important;
+  }
 }
 
 .feed_page_container {
